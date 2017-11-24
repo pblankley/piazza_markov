@@ -1,0 +1,1536 @@
+<script type="text/javascript">PA.load("/dashboard/project_partners", null, function(data){ $('#' + 'questionText').html(data);});</script> #pin<p>The midterm grade on Canvas does not match with the points deducted mentioned in the comments. Is this true for everyone or is there any error with matching the actual grades with names?</p><p>At first I implemented the drop-out procedure from scratch, but then realized that using sklearn&#39;s BaggingClassifier is more succinct.  Should I be using a &#34;from scratch&#34; algorithm or this more succinct version?  Thanks!</p><p>No matter what set of 28 values I pass to predict_proba() it only gives a 1 or a 0, just like predict() does. So why is predict_proba doing this?<br /><br />I do NOT mean values that were in the training set. I mean ANY set of 28 values always just gives a 1 or 0.<br /><br /></p>
+<pre>from numpy import load
+models = load(&#39;models.npy&#39;, encoding=&#39;latin1&#39;)
+models[0].predict_proba([.65 for i in range(28)])</pre>
+<p></p><p>Are we allowed to use code for a decision tree algorithm found online, but modify it to fit this problem?</p><p>I am a little confused about how the &#39;similarity score&#39; is calculated below from the A-section notes. From the description, I think the similarity score is $$\frac{Number\ of\ Common\ Elements\ from\ Two\ Splits}{Total\ Number\ of\ Elements}$$. However, since there are only 7 data points in the given example, I did not understand where the 8 came from in the denominator?</p>
+<p></p>
+<p></p>
+<p><img src="https://d1b10bmlvqabco.cloudfront.net/attach/j6qqcqfmotn3ox/hzvpjdzbeem6g0/ja9dvoinc2rv/Screen_Shot_20171121_at_3.52.34_AM.png" alt="" /></p>
+<p></p>
+<p>Thanks in advance for the explanation!</p><p>&#34;For each predictor in the training sample, set the predictor values to 0 with probability p (i.e. drop the predictor by setting it to 0). Repeat this for B trials to create B separate training sets.&#34;</p>
+<p></p>
+<p>Just to clarify that above means:</p>
+<p>&#34;Set <strong>values</strong> in each predictor column to 0 with a probability of p&#34;...  for example, at a p = 0.5, nearly 50% of a all the <strong>values</strong> in each columns will be = 0.</p>
+<p></p>
+<p>Thanks!</p>
+<p></p>Hi,
+
+Quick question about the item above - is the regularization parameter for the meta learner just going to be whatever we use in a standalone model (e.g., 1/lamda for Logistic regression) or am I thinking about it wrong?
+
+Thanks<p>Were there TF office hours from tonight?</p><p>there is imported assignment and assignment grade, which one should we use? thanks</p><p>if error rate for train is low, but high for test, we will still comment on bias as high? thanks</p><p>I do not see any groups when I search for &#34;HW8&#34; </p><p>Is there anything besides that we can set our max number of predictors in random forests? It seems like they&#39;re almost identical.</p><p>I had a little bit difficult understanding the plot. </p>
+<p></p>
+<p>is the error curve less steep shows an low variance(so relatively flat curve is preferred), and general high error curve signal a high bias? Thanks</p>
+<p></p>
+<p>that&#39;s why the top right plot is preferred  as high bias (error rate in general is high for both train and test dataset), and low variance, (the curve is relatively flat, so the error rate doesn&#39;t change much when the data size increase )? Thanks</p>
+<p></p>
+<p><img src="https://d1b10bmlvqabco.cloudfront.net/attach/j6qqcqfmotn3ox/ixaq1vw5c1L/ja1wflxdmeb1/section_9_.JPG" alt="" /></p><p>I cannot find the assignment to upload my group&#39;s Scope of Work show for Project Milestone #2. Am I missing it or is it not up yet?</p><p>I got accuracy rate decrease when trial increase, but doesn&#39;t feel right, anybody has any suggestions? Thanks</p><p>When exploring the models in models.npy, I noticed</p>
+<p></p>
+<p>1) that models[i].predict_proba(X_train) returns only 1s and 0s for all 100 models, not probabilities as I would have expected. Is that intended or a bug in the models?</p>
+<p></p>
+<p>2) when looking at the prediction accuracy on the training set, I get the following distribution of accuracies which are really closely distributed around 0.5 which equals a coin toss in a binary classification task. Are these models not pretrained? Do I have to train them?</p>
+<p></p>
+<p><img src="https://d1b10bmlvqabco.cloudfront.net/attach/j6qqcqfmotn3ox/j6ybh65skXh/ja1thoaajfm3/acc_hist.png" alt="" /></p>
+<p></p>
+<p></p><p>I have a clarification question: what is expected of us on part 3? Are we supposed to code a decision tree classifier from scratch and implement a CART algorithm or is there a faster way to approach this problem that we are missing? </p><p>There&#39;s no TF here for the 11.30am office hours in the IACS lobby. Were the office hours moved or cancelled? Can&#39;t find an announcement for it.</p><p>Just to make sure, those pre fitted tree are trained from Higgs_train.csv, already, and we just need to come up a algorithm for aggregation or voting/boosting/stacking? Thanks</p><p>the test (validation) sore is rather flat, if choose the optimal, it is 1 depth with 1 tree, I don&#39;t feel right about it, any suggestions? Thanks</p>
+<p></p>
+<p>as I checked, for 5-fold cv, the test run for max dept=1, and num of tree = 1,2,4,8,16, they all got the same accuracy rate, is this reasonable?  Thanks</p><p>Question 1: Regarding general guidelines for stacking provided in lecture, one of them states that &#34;</p>
+<p>models in the ensemble should be diverse, i.e. their errors should not be uncorrelated&#34;. I was wondering if that was a typo? The errors from the ensemble models should be uncorrelated - is that correct?</p>
+<p></p>
+<p>Question 2: In the subsemble approach, the first step is to divide the data into J subsets. For this step, should the data be randomly divided so that each subset contains a random mix of the original data? </p>
+<p></p>
+<p>Thanks!</p><p>Can question 2.1 be answered using the ensemble.BaggingClassifier function in sklearn?</p><p>does jupyter notebook need internet connection to run? I tried once without connection, and it failed.  but wondering other people&#39;s experience. Thanks</p><p>Hi,</p>
+<p></p>
+<p>I have been re-watching some of the lectures, but it is still not really clear to me how one adds &#34;models&#34;. My understanding is that in boosting you are adding decision trees together with each new tree being fit on the residuals of the previous (at least in the regression context)</p>
+<p></p>
+<p>So there was this equation</p>
+<p></p>
+<p>T &lt;- T &#43; lambda T^(i)</p>
+<p></p>
+<p>but how exactly is the above done?</p>
+<p></p>
+<p>Thanks!</p><p>based on the wording of the question, &#34; Make a plot of the training accuracy of the ensemble classifier as a function of tree depths. Make a similar plot of the test accuracies as a function of number of trees &#34;</p>
+<p></p>
+<p>for train accuracy, x-axis will be tree depth, then it will be 4 lines in the plot</p>
+<p>for test accuracy, x-axis will be number of trees? it will be 9 lines in the plot.</p>
+<p></p>
+<p>could you confirm? Thanks</p><p>based on the question, it seems ask us to iterate the combination of tree depth(max_depth) =1,2,10,none, and number of trees(n_estimators)= (2,4,8,...256)? thanks</p><p>The question implies that the mean imputation happens BEFORE the training and test set split. Doesn&#39;t this corrupt the test set data with information from the training set and vice versa?</p>
+<p></p><p>Thanks</p><p></p><p>in section_9_student python code, the plot at the bottom about bias-variance tradeoff, I am not sure I got the idea for the top right plot. why both train err/test error deviate each other so much and still as &#34;low variance&#34;? </p>
+<p></p>
+<p>low variance usually refer to less spread out, by changing the data (moving from train to test), the error between train/test still large. Any advice? Thanks</p>
+<p></p>
+<p>I am referring this plot. the top right is the one circled by blue. ( should low variance refer to lower error rate? ). Thanks</p>
+<p><img src="https://d1b10bmlvqabco.cloudfront.net/attach/j6qqcqfmotn3ox/ixaq1vw5c1L/ja1wflxdmeb1/section_9_.JPG" alt="" /></p>
+<p></p>
+<p></p><p>when we do cross validation, we will pick the optimal parameter based on test score? Thanks</p><p>I&#39;ve noticed that the grades section includes the placement test scores and appears to include them in the current overall grade.  </p>
+<p></p>
+<p>I assume these will not be counted towards our final grade.  Can we remove them from the grades sections?</p>
+<p></p>
+<p>thanks</p><p>PhD in Economic Sociology with background in econometrics looking for partners for the final project</p><p>Are we bootstrapping to produce the training sets? Or are we simply training the subset of predictors on the same training set?</p><p>for ANDI, should we register as a participant to get the data? they ask about age range, questions related to health history, etc. </p><p>I didn&#39;t see any data link, it do said that &#34;data will come from Million Song Dataset and Spotify API&#34;, but how? Thanks</p><p>In Question 4.3, it says &#34;Recall that with random forests, we allow the depth of the individual trees to be unrestricted.&#34; </p>
+<p></p>
+<p>I&#39;m confused about this statement b/c I thought that we were supposed to create random forest models with the max depth we found in Question 1. </p>
+<p></p>
+<p>Could you please clarify? </p>
+<p></p>
+<p>Thanks!</p><p>Hi,</p>
+<p></p>
+<p>Is it okay if our group uses Github (public repo) for the final project. Wanted to ask because the code would be public.</p>
+<p></p>
+<p>Thanks!</p><p>Does anyone else have this issue? I&#39;ve tried np.load(&#39;models.npy&#39;, encoding=&#39;bytes&#39;) and np.load(&#39;models.npy&#39;) and get errors both times.</p><p>some drop rate might end up with empty list of predictors, should we just treat this won&#39;t work out and give an accuracy rate 0? Thanks</p><p>could we pick the range of number of trees and optimal dropout, based on results from q2.1 and q2.2 ? if exhausting all the combination of #of tree in q2.1 and prob in q2.2,  running time is a concern. thanks</p>
+<p></p>
+<p></p><p>when call  RandomForestClassifier, n_estimators is the number of trees in the forests, and max_depth the number of predictors  ? where we will use sqrt(P)?  Thanks</p>Hi, anyone interested in the spotify or the restaurant recommendation problem for the final project?
+
+We&#39;re looking for a third person in our group, preferably with cs or stats background.
+
+Leave us a message here, Thanks!<p>The final project guidelines for Crime Prediction says that: &#34;<strong>You will need MSA census data, which can be obtained by downloading tables from the above site for years of interest.</strong>&#34;</p>
+<p></p>
+<p>There are no website links in the project description aside from that for the UCR FBI site which doesn&#39;t have it either.  Can you provide some more instruction on where we can download the MSA-level data across multiple years?  Are we expected to use only a single table (instead of 10) here since census is done every 10 years?  US Census Bureau is a rather large website and while it looks as though the 2010 data is downloadable through setting up an API (link below), I wasn&#39;t sure if that&#39;s what you had in mind.</p>
+<p></p>
+<p><a href="https://www.census.gov/data/developers/data-sets/decennial-census.html">https://www.census.gov/data/developers/data-sets/decennial-census.html</a></p>
+<p></p>
+<p>Thanks in advance.</p><p>I noticed that using</p>
+<p></p>
+<p>models = np.load(&#39;models.npy&#39;)</p>
+<p></p>
+<p>was giving an error message.</p>
+<p></p>
+<p>I was able to get the models to load properly with </p>
+<p></p>
+<p>models = np.load(&#39;models.npy&#39;, encoding=&#39;latin1&#39;)</p>
+<p></p>
+<p>- Cheers!</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p><p>&#34;bias and variance&#34; here refer to which metric we should use? thanks</p><p>about AdaBoost algorithm mentioned in the question, will this be covered in Monday class? Thanks</p><p>For question 2. How do you take the majority vote if (for a even number of trees, for example 4) you get two models that classify the an observation as 1 and two models that classify as 0? </p><p>about &#34;</p>
+<ul><li>For each predictor in the training sample, set the predictor values to 0 with probability p p (i.e. drop the predictor by setting it to 0). Repeat this for B B trials to create B B separate training sets.&#34;, </li></ul>
+<p>could you give up some hint how to the selection process about this predictors selection? Thanks</p>
+<p></p>
+<p>can use a random generation process with uniform distribution, then if value &gt;0.5 it is 1, then it is &lt;=0.5, then 0, so select the predictors or not? Thanks</p><p>is q2,1, combined classifier here refer to H maj?  Thanks</p>
+<p></p>
+<p></p><p></p><ol><li>Apply the AdaBoost algorithm to fit an ensemble of decision trees. Set the learning rate to 0.05, and try out different tree depths for the base learners: 1, 2, 10, and unrestricted depth. Make a plot of the training accuracy of the ensemble classifier as a function of tree depths. Make a similar plot of the test accuracies as a function of number of trees (say 2,4,8,16,…,2562,4,8,16,…,256).</li></ol>
+<p></p>
+<p>For the first part of this question (try out different tree depth):</p>
+<p>Should we not specify n_estimators? The default is 50.</p>
+<p></p>
+<p>For the second part of this question (try out different n_estimators):</p>
+<p>Should we restrict base learner depth to the optimal depth found in the first part? Or not restrict it?</p>
+<p></p>
+<p>Thanks!</p>
+<p></p>
+<p></p>
+<p></p><p>My decision trees for 2 are getting scores of 1.0 on the X_train tests with subsets of predictors - likely due to the maximum depth. I assume for part 1, when it says &#34; evaluate the training and test accuracy of the combined classifier. &#34;, the training accuracy is essentially useless. We have maximum depth, after all. </p>
+<p></p>
+<p>But what concerns me is that test similarly hangs out around .53 with no change. </p><p>We are two PhD students in SEAS and our team is planning to work on modeling metabolic reduction from wearing exosuits (<a href="https://biodesign.seas.harvard.edu/soft-exosuits">https://biodesign.seas.harvard.edu/soft-exosuits</a>). </p>
+<p></p>
+<p>If you are interested in joining our team or chatting more about the scope of our project, please email us at <a href="mailto:yumengzhou&#64;seas.harvard.edu">yumengzhou&#64;seas.harvard.edu</a> and <a href="mailto:jinwonchung&#64;g.harvard.edu">jinwonchung&#64;g.harvard.edu</a> </p>
+<p></p>
+<p></p><p>I am wondering if we have any class/lab/section example to give some idea how to handle similar questions? seems we will build the algorithm from scratch.</p><p>Can we use some other algorithm, which might be less computationally expensive than using surrogate splits, to handle missing data in decision tree (e.g., the algorithm described in <a href="http://mlwiki.org/index.php/Decision_Tree_%28Data_Mining%29#Handling_Missing_Values">http://mlwiki.org/index.php/Decision_Tree_(Data_Mining)#Handling_Missing_Values</a>)?</p>
+<p>Or are we required to implement decision tree with surrogate split in this question?</p>
+<p>Thanks!</p><p><img src="https://d1b10bmlvqabco.cloudfront.net/attach/j6qqcqfmotn3ox/ibbdd5b49211mb/j9ug9kgu119h/therearetwotypesofpeopleinthisworldthosemenslongsleevetshirt.jpg" alt="" /></p><p>In Question 1, the problem states: &#34;<strong>You will use the max_depth you find here throughout the homework.</strong>&#34;<br />In Question 2, the problem states: &#34;<strong>You may allow the trees to have unrestricted depth.</strong>&#34;</p>
+<p></p>
+<p>Setting a max_depth on any decision tree (Random Forest and Boosting models) just makes sense.  Why would we not want to set a limit on max depth on our Dropout-based approach (Q2)?  I am asking because the resulting model if we don&#39;t set a max depth is clearly over-fitting the training data.  And since we&#39;re comparing model results, wouldn&#39;t we want to use the same parameter here?  Thanks in advance.</p>
+<p></p>
+<p>PS, In Question 2.3, the problem hint also states: &#34;<strong>You may need to restrict the max number of trees.</strong>&#34;  Can someone please provide some guidance?</p>Our team is looking for the fourth project partner from the AC209 track. Our roster includes two people from the engineering background and one from the stats background with data science project management experience. We are looking for someone with a strong visualization skill set or interested in developing it and owning the &#39;viz&#39; aspect of the project. If you are interested in discussing more and meeting us in person ahead of the lecture on Monday, please drop a note to jhill&#64;hbs.edu<p>It seems the file &#96;models.npy&#96; for hw8 question 5 is missing.</p>
+<p>Where can we find it?</p><p>No one is monitoring the live zoom so I can&#39;t post that I am run the lab in github and it generates an error.</p>
+<p>This doesn&#39;t run for me. n is a float instead of an integer (it is a number below 1)</p>
+<p></p>
+<pre>for n,f in product(*param_dict.values()): 
+    print(n,f)
+
+outputs 
+0.2 400 
+0.2 600 
+0.2 800 
+0.4 400 
+0.4 600 
+0.4 800 
+0.6 400 
+0.6 600 
+0.6 800 
+0.8 400 
+0.8 600 
+0.8 800</pre>
+<p></p><p>is the material that tested by hw8 already covered upto this Wed class? or we might need next Monday/Wed session? Thanks</p><p>Hello,</p>
+<p></p>
+<p>Would it be possible to push the data for Lecture 15? The notebook imports data/Hearts.csv which is missing from github.</p>
+<p></p>
+<p>Thank you!</p><p>I get the following error message when pulling from the course repo today:</p>
+<p>: Invalid argumentreate file Labs/Lab8_DiscriminantAnalysis/datasets/Icon</p>
+<p></p>
+<p>[Spacing in the original]. I&#39;m not at all an expert, but I&#39;d guess some instruction file somewhere is missing the letter c. I get the same error when trying to clone the repo from scratch. Can one of the staff reproduce the bug and hunt for a fix, or a smarter student suggest a workaround? If relevant, I&#39;m one of the weirdos running on windows and using git bash.</p><p>... or is quasi-convexity sufficient?</p>
+<p></p>
+<p>(where the function may be concave over some regions but it is always increasing as you move away from the minimum)</p><p>I am wondering when HW 8 is going to be released. </p><p>I have found in the workplace, that much time needs to be spent on clarifying requirements (whether it is waterfall method or eXtreme Programming or anywhere in between).</p>
+<p></p>
+<p>And in the requirements area, answer the 5 W&#39;s is essential. Who, what, when. why, where.</p>
+<p></p>
+<p>So I am curious, how did students interpret the midterm&#39;s problem statement: forecasting flight delays.</p>
+<p></p>
+<p>When</p>
+<p>1. flight departure or flight arrival</p>
+<p>2. Forecasting time for binary delay question: 1&#43; days before the scheduled take off, shortly before takeoff, after take off</p>
+<p>3. When Forecast is made for time delay question: 1&#43; days before scheduled departure, same day of departure but before takeoff, anytime during take off, shortly before scheduled arrival, immediately after scheduled arrival, 15&#43; minutes after scheduled arrival</p>
+<p>4. When is which data available to the forecaster</p>
+<p></p>
+<p>Who</p>
+<p>1. Passenger</p>
+<p>2. Flight Crew</p>
+<p>3. Flight Operations</p>
+<p></p>
+<p>What</p>
+<p>(converse of When #4) Which data would be available to the forecaster at the time when the forecast was made </p>
+<p></p>
+<p>Why</p>
+<p>Which penalties/wins are important to the forecast. (which also depends on the Who question)</p>
+<p></p>
+<p>Where</p>
+<p>At the airport, on the plane, at the flight operations tower, far from the airport/flight</p>
+<p></p>
+<p>I personally spent a fair amount of my ~25 hours trying to decide the answers to those questions and spoke with one student who came up with very diferent answers to those than I did. I wonder what your assumptions were while you were doing the midterm (and did those change as you spent more time on it).</p>
+<p></p><p>What is the expectation for when the HW6, HW7 and the midterm grades will be released? Ballpark is fine.</p><p>Does the timer start before clicking &#34;take the quiz&#34;? How can we check how many time remaining? Can we see it on the midterm page?</p>
+<p></p>
+<p>Or how do we know whether the timer has start?</p>
+<p></p><p>I raised this issue before about the homework needing to be in github.</p>
+<p></p>
+<p>Then I see this:</p>
+<p></p>
+<p><a href="https://www.piazza.com/class/j6qqcqfmotn3ox?cid=444">https://piazza.com/class/j6qqcqfmotn3ox?cid=444</a></p>
+<p></p>
+<p>Ideally a <strong>major</strong> clarification to a large homework should be <strong>broadcast</strong> via email as soon as it is discovered rather than having the students happen upon it as they read every single message in piazza 15 minutes before the deadline.</p>
+<p></p>
+<p><strong>Design</strong> and <strong>implementation</strong> are two entirely different things. While I would have enjoyed implementing my design (and I may do it just for fun), I did not do it for the homework as it never occurred to me that these two concepts would be confused in our homework instructions.</p>
+<p></p>
+<p>Sorry if this seems disrespectful, but as Jerry Weinberg taught me, &#34;no matter how it seems, people are usually trying to be helpful&#34;. ;-)</p><p>When I do Kfold for KNN to choose the best n for some reason kf.split splits the indexes (0,101) instead of indexes of Xtrain, which are not (0,101). It seems that instead of using the actual indexes of Xtrain, it uses the length of the Xtrain to assign the indexes. Can someone tell me why and what to do about it?</p>
+<p></p>
+<pre>---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+&lt;ipython-input-217-06851dc429a8&gt; in &lt;module&gt;()
+      5     for train_index, val_index in kf.split(set1[&#34;Xtrain&#34;]):
+      6 
+----&gt; 7         X_train, X_val = set1[&#34;Xtrain&#34;][train_index], set1[&#34;Xtrain&#34;][val_index]
+      8         y_train, y_val = set1[&#34;ytrain&#34;][train_index], set1[&#34;ytrain&#34;][val_index]
+      9 
+
+/anaconda/lib/python3.6/site-packages/pandas/core/frame.py in __getitem__(self, key)
+   2054         if isinstance(key, (Series, np.ndarray, Index, list)):
+   2055             # either boolean or fancy integer index
+-&gt; 2056             return self._getitem_array(key)
+   2057         elif isinstance(key, DataFrame):
+   2058             return self._getitem_frame(key)
+
+/anaconda/lib/python3.6/site-packages/pandas/core/frame.py in _getitem_array(self, key)
+   2098             return self.take(indexer, axis=0, convert=False)
+   2099         else:
+-&gt; 2100             indexer = self.loc._convert_to_indexer(key, axis=1)
+   2101             return self.take(indexer, axis=1, convert=True)
+   2102 
+
+/anaconda/lib/python3.6/site-packages/pandas/core/indexing.py in _convert_to_indexer(self, obj, axis, is_setter)
+   1229                 mask = check == -1
+   1230                 if mask.any():
+-&gt; 1231                     raise KeyError(&#39;%s not in index&#39; % objarr[mask])
+   1232 
+   1233                 return _values_from_object(indexer)
+
+KeyError: &#39;[ 21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38\n  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56\n  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71  72  73  74\n  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90  91  92\n  93  94  95  96  97  98  99 100 101] not in index&#39;</pre><p>Perhaps you can design your classifier python code in this way ;-)</p>
+<p></p>
+<p>https://youtu.be/zrzMhU_4m-g</p>
+<p></p>
+<p></p><p>if we have questions, can we post them on Piazza? Thanks</p><p>Hi, since there are only 2 assignments left for this semester and our group still have several unused late days, I was wondering if we could use our late days for the final project. Thank you!</p><p>Can someone help me out with the LogisticCV return value?   I am using it to fit regularized Logistic Models, but I am unsure of how I should use the output of LogisticCV.</p>
+<p></p>
+<p>Do you have to get the best C and then re-fit a LogisticRegression or LogisticRegressionCV returns a model that is already fit on the entire training data with best C?</p>
+<p></p>
+<p></p>
+<p>Thanks</p><p>How do we submit the slides in the last problem? any naming convention?</p>
+<p>Thanks!</p>Are we allowed to take late days on HW7 given the early deadline?<p>I pip installed graphviz and pydot, and found this stack overflow related to visualizing the decision tree within the notebook: <a href="https://stackoverflow.com/questions/33086752/display-decision-tree-in-ipython-notebook">https://stackoverflow.com/questions/33086752/display-decision-tree-in-ipython-notebook</a></p>
+<p></p>
+<p>I can&#39;t get this to run.</p>
+<p></p>
+<p>I found this unanswered Stack Overflow with the same exception I am getting: <a href="https://stackoverflow.com/questions/44118519/creating-graph-from-dot-file">https://stackoverflow.com/questions/44118519/creating-graph-from-dot-file</a></p>
+<p></p>
+<p>Has anyone managed to display the tree within the notebook?</p>
+<p></p>
+<p>I&#39;ve used the website listed in the hw, but I&#39;d really like to figure out how to do this in Jupyter.</p>
+<p></p>
+<p>Edit: I am on Windows</p><p>&#34;More specifically, suppose the cost incurred by a hospital when a model mis-predicts on a patient is $5000, and the cost incurred when the model abstains from making a prediction is $1000. What is the average cost per patient for the OvR logistic regression model from Question 1, Part 3?&#34;</p>
+<p></p>
+<p>Is a mis-prediction a false negative only, or does that include false positives?</p>
+<p>When we calculate the cost on OvR do we adjust the classification to include some abstain category? Or do we make that calculation based on the existing classifications?</p>
+<p></p>
+<p></p><p>if tree depth is set to 2, then at the end, it will have 4 nodes, should we interpret it by grouping, as there is only 3 category? Thanks</p><p>can we save the result as a graphic file, and upload separately with .pdf and python file? Thanks</p>
+<p></p>
+<p>analysis will be done in the same python file. </p><p>Please clarify if HW7-Q5 is for all students or only AC209 students. Usually, a HW contains the last question for AC209 questions.</p>What does &#39;Ease of interpretability&#39; mean in Q4? Does it refer to the ease of reading the boundary plots or the ease of computation methods behind the model?<p>I don&#39;t see a Part 2(a) or Part 2(c) anywhere in this homework - yet there&#39;s a reference in Q3 to code from there that we are to use.</p>
+<p> </p>
+<p>Where might this code be found?</p><p>for logistic model, our dataset has 3 categories, is there a builtin function to check what threshold model use to get the predicted categorical results?  Thanks</p><p>is it run tree depth as 2,,.10, for each tree depth, use cv=5 .</p>
+<p></p>
+<p>after we get a list of scores for each tree depth, show should we use them? should we rank the tree depth by mean of corresponding score ? Thanks</p><p>&#34;More specifically, suppose the cost incurred by a hospital when a model mis-predicts on a patient is $5000, and the cost incurred when the model abstains from making a prediction is $1000. What is the average cost per patient for the OvR logistic regression model from Question 1, Part 3? Note that this needs to be evaluated on the patients in the test set. Your task is to design a classification strategy (into the 3 groups plus the abstain group) that has as low cost as possible per patient. Give a justification for your approach.&#34;<br /><br />Are we supposed to (1) design an OvR-based classification strategy that has the lowest possible cost among OvR-based classifiers or (2) find the classifier that has lowest possible cost among all classifiers?<br /><br /></p><p>I used GridSearchCV got optimal knn model</p>
+<p>clf=GridSearchCV(knn, parameters, cv=10)</p>
+<p></p>
+<p>when I tried to fit the model</p>
+<p>clf.fit(X_train,y_train), got below error: I used np.ravel to convert both X_train and y_train, also not working, any advice? Thanks</p>
+<p></p>
+<p></p>
+<pre>---------------------------------------------------------------------------
+IndexError                                Traceback (most recent call last)
+&lt;ipython-input-59-e662c5f5da79&gt; in &lt;module&gt;()
+      8 print(clf)
+      9 #result_knn=clf.fit(X_train.values,y_train.values)
+---&gt; 10 result_knn=clf.fit(X_train,y_train)
+     11 
+     12 
+
+C:\Anaconda3\lib\site-packages\sklearn\grid_search.py in fit(self, X, y)
+    827 
+    828         &#34;&#34;&#34;
+--&gt; 829         return self._fit(X, y, ParameterGrid(self.param_grid))
+    830 
+    831 
+
+C:\Anaconda3\lib\site-packages\sklearn\grid_search.py in _fit(self, X, y, parameter_iterable)
+    550                                  &#39;of samples (%i) than data (X: %i samples)&#39;
+    551                                  % (len(y), n_samples))
+--&gt; 552         cv = check_cv(cv, X, y, classifier=is_classifier(estimator))
+    553 
+    554         if self.verbose &gt; 0:
+
+C:\Anaconda3\lib\site-packages\sklearn\cross_validation.py in check_cv(cv, X, y, classifier)
+   1821         if classifier:
+   1822             if type_of_target(y) in [&#39;binary&#39;, &#39;multiclass&#39;]:
+-&gt; 1823                 cv = StratifiedKFold(y, cv)
+   1824             else:
+   1825                 cv = KFold(_num_samples(y), cv)
+
+C:\Anaconda3\lib\site-packages\sklearn\cross_validation.py in __init__(self, y, n_folds, shuffle, random_state)
+    567         for test_fold_idx, per_label_splits in enumerate(zip(*per_label_cvs)):
+    568             for label, (_, test_split) in zip(unique_labels, per_label_splits):
+--&gt; 569                 label_test_folds = test_folds[y == label]
+    570                 # the test split can be too big because we used
+    571                 # KFold(max(c, self.n_folds), self.n_folds) instead of
+
+IndexError: too many indices for array
+
+</pre>
+<p></p><p></p><p></p><p>Should we have 6 or 12 plots for part 2? The spec does not specify which set to overlay on the boundaries. One for each training and test set, or just just the test points? Obviously the boundaries won&#39;t change for each of the 6 models, but the scatter will be slightly different for the training or test sets. I&#39;m assuming plot just the test points for now.</p><p>&#39;plot_decision_boundary&#39; function seems to give me trouble when used for Polynomial logit that is related to data dimensions changing</p>
+<p></p>
+<pre>X has 6 features per sample; expecting 2</pre>
+<p>. Is there a trick that I am missing?</p><p>Is the question asking us to include &#34;abstain&#34; option in the training model and use that to predict test set, or is that only asking us to introduce &#34;abstain&#34; in the test set after everything is done?</p>
+<p></p>
+<p>Thanks!</p><p>Hello,</p>
+<p></p>
+<p>I was wondering if you could give me an example of using plot_decision_boundary - just want to make sure I have my parameters right.</p>
+<p></p>
+<p>THANKS!</p>
+<p></p>
+<p>d</p>
+<p></p>When it says &#34;Your task is to design a classification strategy (into the 3 groups plus the abstain group) that has as low cost as possible per patient. Give a justification for your approach.&#34; does that mean that we&#39;re supposed to actually implement the model, or should just explain how we would go about implementing it?
+
+And if we should actually implement it, which model should we implement it for?<p>I suppose we just use <em>LogisticRegressionCV, </em>but I&#39;m not sure how to deal with the quadratic terms. Any ideas?</p><p>This might be an obvious question, but how should we prepare the 5 slides? Should we make them in a separate notebook and submit as a &#34;slideshow&#34;?</p>
+<p></p>
+<p>To put it differently, I am not sure how to make &#34;slides&#34; in a normal Jupyter notebook unless the entire notebook is set to a slideshow.</p>
+<p></p>
+<p>Thanks </p><p>In some of the code from lecture and lab, we plot the decision boundaries based on the entire data set. For the pset, should we use the entire data set or only the test set?</p>
+<p></p>
+<p></p><p>For HW7 Q1.4, should we use cross-validation to choose the regularization parameter for LDA as well? If so, does that mean we should be using &#34;shrinkage=&#34;? And I&#39;m assuming there&#39;s no regularization parameter for QDA, correct? Thanks!</p><p>Hi,</p>
+<p></p>
+<p>get an error when I try to call the &#39;plot_decision_boundary&#39; function that&#39;s around the &#39;ax&#39; argument, see below   What type of object should &#39;ax&#39; be and can you provide an example of a valid &#39;ax&#39; to use when calling this function?  Any help is appreciated.</p>
+<p></p>
+<p>Thanks!</p>
+<p></p>
+<p>From the function:</p>
+<p></p>
+<p>def plot_decision_boundary(x, y, model, title, <strong>ax</strong>, poly_degree=None):</p>
+<p>#      <strong>ax (a set of axes to plot on)</strong></p>
+<p></p>
+<p></p>
+<p>The error is around this line in the function:</p>
+<p></p>
+<pre style="font-family:monospace;text-align:left;font-weight:normal;font-style:normal;color:#000000">ax<span style="color:#208ffb">.</span>contourf<span style="color:#208ffb">(</span>x1<span style="color:#208ffb">,</span> x2<span style="color:#208ffb">,</span> yy<span style="color:#208ffb">,</span> cmap<span style="color:#208ffb">=</span>plt<span style="color:#208ffb">.</span>cm<span style="color:#208ffb">.</span>coolwarm<span style="color:#208ffb">,</span> alpha<span style="color:#208ffb">=</span><span style="color:#60c6c8">0.8</span><span style="color:#208ffb">)</span>
+<span style="font-weight:bold;color:#007427"></span>
+<span style="color:#e75c58">AttributeError</span>: <strong>&lt;whatever I try to cast ax as&gt;</strong> object has no attribute &#39;contourf&#39;</pre><p>Question 3, Part 2 asks:</p>
+<p></p>
+<p><strong>Use 5-fold cross-validation to find the optimal tree depth. How does the performance of a decision tree fitted with this depth compare with the models fitted in Part 2(a)?</strong></p>
+<p></p>
+<p>Sub-question are numbered, not lettered but even if we translated the letters to numbers the question doesn&#39;t make sense: Q2.1 is about visualizing the data and no accuracies are being calculated.  Are we supposed to compare the results here to linear logistic regression, logistic regression with polynomial terms, or all of the models we have run previously?  There is a similar problem with reference numbering in Question 3 Part 3, but at least for that one I can assume <strong>Part 2(c)</strong> just means Q2.1 since that&#39;s where the visualization code was given. Thanks.</p><p>For HW6 I used the function train_test_split function from sklearn.model_selection to divide the data into a 75-25 split between train and test data.  In HW7 we are provided the code below which aims to split the train and test set 50-50.</p>
+<p></p>
+<p>np.random.rand(len(df)) &lt; 0.5</p>
+<p></p>
+<p>However, this splits the data up and puts 102 points into train and 113 points into test.  The chance of random number generator generating exactly 50% of numbers below 0.5 and 50% of numbers above 0.5 are low when 215 random numbers being generated.  In general, why wouldn&#39;t we always use the train_test_split function or perhaps selecting the 50% largest randomly generated numbers to get a cleaner (exactly 50-50) split of the data?</p><p>Part 2 is giving me fits, and since it is based on what I do in part 1, I need a sanity check on my part 1.</p>
+<p></p>
+<p>Without giving out the solutions to the problems, can someone tell me if they feel in their opinion that the logistic regression classifier does a weak job of correctly identifying cancer? In my code, it doesn&#39;t do a good job of correctly finding classifying in the test data that a known true cancer example is a cancer example. (true positive).</p>
+<p></p>
+<p>Maybe that is expected, but if not, then I&#39;ve done something dumb in my code (which is really short code, so that surprises me... it is usually much easier to make a coding mistake when you write lots of code.).</p><p>Hi all class, </p>
+<p></p>
+<p>We have 2 209 students and we want to find another 2 partners who enroll in 209 as well for the final project. Please contact me via email: <a href="mailto:zhengyang&#64;g.harvard.edu">zhengyang&#64;g.harvard.edu</a> </p>
+<p></p>
+<p>Thanks.</p><p>how to display a curve for all 0&#39;s classifier? I am not sure I could get idea and looking for advice. Thanks</p>
+<p>for all 0&#39;s classifier, the TPR and FPR both are 0.</p>I&#39;m a bit confused why lab and section imputed based on the full dataset and then split into test and train. Isn&#39;t that contaminating our testing dataset?<p>for all 0 classifier (true) value, how could we draw it together with ROC curve? Thanks</p>
+<p></p>
+<p>in part 4, does the area under ROC curve refer to the plot we did in part 1? Thanks</p><p>I just want to clarify - for question 1.3 are we supposed to use a linear regression or a logistic regression?</p>
+<p></p>
+<p>Just a little confused because 1.2 says &#34;logistic&#34;, and 1.3 says &#34;linear, using the methods from 1.2&#34;</p>
+<p></p>
+<p>Question 1.2:</p>
+<p></p>
+<p>Briefly explain the difference between multinomial <span style="text-decoration:underline"><strong>logistic</strong> </span>regression and one-vs-rest (OvR)<span style="text-decoration:underline"> <strong>logistic</strong> </span>regression methods for fitting a multiclass classifier (in 2-3 sentences)</p>
+<p></p>
+<p></p>
+<p>Question 1.3</p>
+<p></p>
+<p>Fit <strong>linear classification</strong> models on the thyroid data set using both the methods. You should use L2 regularization in both cases, tuning the regularization parameter using cross-validation. Is there a difference in the overall classification accuracy of the two methods on the training and test sets?</p><p>http://www.dataschool.io/roc-curves-and-auc-explained/</p><p>Is there a way to calculate TPR without using roc_curve (which returns an array of TPR values)?</p><p>4 is based on results from 3? Thanks</p>
+<p></p>
+<p>add:</p>
+<p>for 4, area under ROC curve for both fitted calssifier and all 0&#39;s classifier, this refer to results from q2, 1? Thanks</p>
+<p></p>
+<p></p><p>Do we have to standardize training set which is used for fitting the model for imputation?</p><p>When I run <tt>classify_with_sets</tt> on <tt>hw6_dataset_missing.csv</tt> (after dropping the NA records), which runs within it <tt>LogisticRegressionCV</tt> using 5 folds, <tt>gs.fit</tt> throws the above error:</p>
+<p></p>
+<pre>ValueError: Only one class present in y_true. ROC AUC score is not defined in that case.</pre>
+<p></p>
+<p>This makes sense as with only 3 positive observations in the entire data set, it is unavoidable to hit a fold which lacks a positive result. I tried running it with only 2 folds, the lowest number allowed, but the error was still thrown. Note that I did use the recommended seed from part 1 (9001).</p>
+<p></p>
+<p>How can I overcome this error? Thanks!</p><p></p><p>when try to use linear model to predict missing value, should we only use those column that don&#39;t have missing value? sometimes, one row have multiple col that has missing value.... Thanks. </p>
+<p></p>
+<p>after checking lab notes, I use matrix that keep rows and cols don&#39;t have missing value as x. and loop through columns that have missing value (y), generate linear model and predict missing y with error term.</p><p>Is there no online Professor office hours today from 9 to 10 pm or there is a new zoom link?</p><p>Should we be setting priors for the LDA/QDA in HW7?  I notice we don&#39;t do so in the lecture examples, but this occasionally gives a &#39;priors don&#39;t sum to 1&#39; warning when using cross_validation_score.</p>
+<p></p>
+<p>Thanks!</p><p>If we already know how to use the elegant GridSearchCV() for cross validation, may we use that in the HW psets instead of the &#34;by-hand&#34; method we&#39;ve been doing with KFolds?</p>
+<p></p>
+<p>Thanks!</p><p>Does anyone else get this graph when using the code from lab? Either our model is really good, or the code somehow doesn&#39;t apply to this situation, since we copied it exactly from lab.</p>
+<p></p>
+<p><img src="https://d1b10bmlvqabco.cloudfront.net/attach/j6qqcqfmotn3ox/ik7i1awz8vr2wh/j94pjp324wxo/Q2.1.PNG" alt="" /></p><p>Part 3.4 asks us to discuss the computational complexity of three imputation methods. Do you mean discussing time complexity using big O notations? Thank you.</p><p>Can you release the solution of hw5? Thanks!</p><p>HW6 shows as being due &#39;Wednesday by 11:59am&#39;. Is that a typo or has the regular due date/time been decreased by 12 hours for this HW? Please advise. Thanks!</p><p>In 2.1, it asks to &#34;also display the ROC curve for the all 0&#39;s classifier.&#34; How would we do this? The all 0&#39;s classifier, classifies nothing as positive, so its FPR and TPR are both 0. </p><p>I know we have discussed this several times in class, but I still find it confusing.</p>
+<p></p>
+<p>So, Under what circumstances should we normalize and under what circumstances should we standardize?</p><p>In Questions 2.2 , we are given the following FPR&#39;s = 0, 0.1, 0.5, 0.9</p>
+<p></p>
+<p>in which we need to find the threshold that achieves the max TPR for each FPR. I am looking through FPR&#39;s for my logistic ROC curve and not all of these values are in there. What do we do/how close does a value need to be (ex .55 to .5) in order to use in place of the values you gave us.</p>
+<p></p>
+<p>Thanks.</p>
+<p></p>I&#39;m not sure I understand how to impute across multiple variables.
+
+The way I understood it, is that you impute missing predictors based on the complete values, and as you impute predictors, you are getting new predictors that are now complete. But given this interpretation, it doesn&#39;t make sense to me that we&#39;d need multiple runs, so I think that I&#39;m misunderstanding something. Thanks!<p>hi, just out of curiosity, Are we supposed to wait for a long time before we see the regularization parameter? I waited 20 mins already.. and restarted several times... is it normal for this function to run for a while? </p><p>should we answer all Q2 question, based on results on test data? Thanks</p><p><a href="http://scikit-learn.org/stable/modules/generated/sklearn.metrics.auc.html#sklearn.metrics.auc">http://scikit-learn.org/stable/modules/generated/sklearn.metrics.auc.html#sklearn.metrics.auc</a></p>
+<p></p>
+<p><a href="http://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html#sklearn.metrics.roc_auc_score">http://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html#sklearn.metrics.roc_auc_score</a> </p>
+<p></p>
+<p>Having trouble understanding the difference between these metrics functions that both seem to calculate area under the ROC curve but result in completely different numbers</p>
+<p></p>
+<p>UPDATE:</p>
+<p>auc - general area under the curve (you must calculate the roc first to get roc area under the curve)</p>
+<p>roc_auc_score - area under roc curve given ytrue, ypredict</p><p>We are asked to &#34;compute the above likelihood equations in the case of logistic regression, and show that this is equivalent to <strong>the solution given in lecture</strong>.&#34; </p>
+<p></p>
+<p>What is the solution referring to? Is it in the A-section note or class note?</p>
+<p></p>
+<p>Thanks!</p><p>In Q2, the question asks to take the derivative with respect to beta_j. But I thought beta_j is a parameter (scalar) and not a vector. Also, for Q2 and Q3, are we assuming i != j?</p><p>I am looking to join group for Project. Please let me know if anyone is looking for project partners also.</p><p>Hi, </p>
+<p>After I removed all missing data, I had 1077 entries for training data and 359 entries for test data. </p>
+<p></p>
+<p>When I tried to fit with LogisticRegressionCV with cv = 10, it gave me the following error:</p>
+<p></p>
+<pre>ValueError: This solver needs samples of at least 2 classes in the data, but the data contains only one class: 0.0<br /><br /></pre>
+<p>Did anyone else also get it? Does anyone have any suggestion on how to get around it?</p>
+<p></p>
+<p>Thanks!</p>
+<p></p><p>We simply used an array of 0&#39;s as the predicted values for the &#34;all 0s classifier&#34; in problem 1. How do we display an ROC curve for this classifier if it isn&#39;t a true model to begin with?</p><p>for sub q 2, to test threshold influences a classifiers FPR, should we implement a function similiar to t_repredict, which manually making confusion table from a different threshold  ? </p>
+<p></p>
+<p>or there is a handy builtin function that we could use? Thanks</p><p>In the lab, we impute the outcome variable so it makes sense to use a data set where we dropped all null values to build a regression model to do this.</p>
+<p></p>
+<p>However, in our data set with missing values for the hw questions, the &#34;type&#34; column has no missing values. All the missing values are in our predictors.</p>
+<p>So, are we constructing a linear model from our dropped_null data set where we predict the predictor from all other predictors? EG if predictor 4 has null values, I make a model that predicts predictor 4 from predictors 1 through 117?</p><p>in q1, when use logit regression &#34;</p>
+<ol><li>
+<p>You should use L 2  L2 regularization in logistic regression, with the regularization parameter tuned using cross-validation&#34;,</p>
+are we supposed to use GridSearchCV, pass LogisticRgressin ,wich penalty =&#39;L2&#39;? </li></ol>
+<p>do we need to set param_grid? Thanks</p>
+<p></p>
+<p>or maybe just LogisticRegressionCV? Thanks</p><p>Please provide some recommendation on the standardization approach for data in cases when we are given entire data set and have to split it into test and train.</p><p>For which threshold we need to evaluate the TPR in the test set?</p><p>Compute the area under the ROC curve (AUC) for both the fitted classifier and the all 0&#39;s classifier. How does the difference in the AUCs of the two classifiers compare with the difference between their classification accuracies in Question 1, Part 2(A)?</p>
+<p></p>
+<p>What&#39;s this question alluding to exactly?</p><p>Does overall classification rate mean classification accuracy or something else?</p>
+<p>Thanks!</p><p>The ROC is true positive rate vs. false positive rate. If we classify all samples as 0, basically both true positive rate and false positive rate are zero (sounds weird, is this correct?).  So how can we plot a ROC?</p><p>One part reads: &#34;Suppose a clinician told you that diagnosing a cancer patient as normal is *twice* as critical an error as diagnosing a normal patient as having cancer. Based on this information, what threshold would you recommend the clinician to use? What is the TPR and FPR of the classifier at this threshold?&#34;<br /><br />What should we assume about the value of correctly classifying cancers and non-cancers?</p>
+<p></p>
+<p>If I decide that any non-cancer patient getting scared needlessly is completely immoral I&#39;m going to choose the classifier that says nobody ever has cancer. Vice versa if I decide that warning even one person about their cancer outweighs everything else.</p><p>Can we use that function for Question 2?</p><p>The question says &#34;Compute the highest TPR that can be achieved by the classifier at each of the following FPR&#39;s&#34;. Which classifier is the question asking for?</p><p>Question 1e makes more sense to me if it asks us to discuss about false negative rate instead of false positive rate, as I think a classifier with a higher false negative rate is more undesirable than one with a higher false positive rate.</p><p>Instructions: Re-fit a logistic regression model using 5-fold cross-validation to choose the number of principal components, and comment on whether you get better test performance than the model fitted above (explain your observations).</p>
+<p></p>
+<p>Question: </p>
+<p>1) This has nothing to do with 90% of variance explained as in e.1, right?</p>
+<p></p>
+<p>2) It is asking to run 5 folds and fit regression for 1,2,3,4...32 components for each fold and look which number of components provides best score? </p>
+<p></p>
+<p>3) How to merge 5 components counts. Mean and then round to int? Is this the best approach?</p><p>The text in hw6 mentions &#34;102,294 candidate ROIs, of which only 623 are malignant&#34;</p>
+<p></p>
+<p>In the dataset  &#39;hw6_dataset.csv&#39; there are only 69098 rows with 403 malignant cases.</p>
+<p></p>
+<p>Should we just ignore the text or is there a mix-up with the dataset?</p>
+<p></p><p>I don&#39;t know what<em> &#39;significantly different from zero at a significance level...&#39;</em> means. I didn&#39;t find any clues on piazza or on the slides. Maybe I missed something, but I&#39;m running out of time at least concerning homework, though there are more important things than homework, so I hope to finally understand this at some point.</p><p>for this heat map, we are not interesting in the correlation between each data, but predictors value vs. cancer type? so plot the color based on cancer type? I don&#39;t quite understand why we will use heatmap here. Thanks</p><p>I&#39;m running into a problem where visualize_prob returns the error &#39;np&#39; is not defined. I&#39;ve attempted the solutions for &#64;324 and &#64;334, but neither solution (or a combination of them) makes a difference in the error/output. I&#39;ve also checked that none of the issues popping up in those threads apply to my code - e.g. the predicted probability output is correct (array of 32x2, all with unique predictions).</p>
+<p></p>
+<p>Are there any other solutions that might work?</p>
+<p></p>
+<p><img src="https://d1b10bmlvqabco.cloudfront.net/attach/j6qqcqfmotn3ox/j7turywuV7r/j8xkoj58erbg/Screen_Shot_20171018_at_5.51.02_PM.png" alt="" /></p><p>I fit a logistic regression model on the first set of principal components contributing to 90% of the variance in the predictors, and i get a training classification accuracy of 1, but a test classification accuracy of 0.46.</p>
+<p></p>
+<p>The strange thing is, if I perform the same process on the original data but without normalizing using MinMaxScaler, I get a test classification of 0.90.</p>
+<p></p>
+<p>Has anyone else had this problem? Or suggestions on how I might fix this?</p><p>to answer the last part of question partb, for logit model, we will plot point that prob of y==1? Thanks</p><p>It seems the United States Supreme Court also makes decisions based on faulty data.</p>
+<p></p>
+<p><a href="https://www.huffingtonpost.com/entry/supreme-court-errors-arent-hard-to-find_us_59e6cfbce4b08f9f9edb845b">https://www.huffingtonpost.com/entry/supreme-court-errors-arent-hard-to-find_us_59e6cfbce4b08f9f9edb845b</a></p>
+<p></p>
+<p>Checking/confirming/improving data quality, in my experience, is at least 25% of a data scientist&#39;s job. I saw a Microsoft job posting where a data science group claimed it was 70&#43;%.</p>
+<p></p>
+<p>It seems it was 0% of the Supreme Court&#39;s job.</p><p>When we do Gridsearchcv we typically have the following inputs: [a model, a grid of parameters to search over, a metric to evaluate the best performer]</p>
+<p> </p>
+<p>The problem here is that the grid of parameters is for PCA but we don&#39;t evaluate a metric until AFTER running logistic regression. </p>
+<p> </p>
+<p>We need to <strong>bind</strong> PCA and Regression. </p>
+<p> </p>
+<p>There is an upcoming lab on how to do this using a pipeline (<a href="http://scikit-learn.org/stable/auto_examples/plot_digits_pipe.html#sphx-glr-auto-examples-plot-digits-pipe-py" target="_blank">http://scikit-learn.org/stable/auto_examples/plot_digits_pipe.html#sphx-glr-auto-examples-plot-digits-pipe-py</a>).</p>
+<p> </p>
+<p>Until then you will want to return to KFold</p>
+<p></p>
+<p></p>
+<p>------------------------------------------------------------</p>
+<p>Please explain how we should <strong>bind</strong> PCA and Regression STEP by STEP without pipeline as Gridsearch have:</p>
+<p></p>
+<pre>        gs = GridSearchCV(clf, param_grid=parameters, cv=n_folds)
+</pre>
+<p> </p>
+<p>Here how to pass pca parameters if we have logistic regression model as clf?</p><p><em>the scores predicted by [sic] regression model</em></p>
+<p><em></em></p>
+<p>Does the word &#34;score&#34; in the above homework quote refer to the result of a predict method, or sklearn&#39;s score method, or some other statistical measure in statsmodel?</p><p>simple question, to get p-value, we will use two tail t-dist, with each tail 2.5% for 95% significance? Thanks</p>
+<p>degree of freedom is 99.  does python have function we could use? should we use scipy.stats? Thanks</p>
+<p></p>
+<p>I used: if pval is &lt; 0.05, then keep the predictor. or there is better way? Thanks</p>
+<pre>&lt;code&gt;pval = stats.t.sf(np.abs(tt), n-1)*2&lt;/code&gt;</pre><p>In part e we are asked: </p>
+<ol><li>
+<p>How do the classification accuracy values on both the training and tests sets compare with the models fitted in Parts (c) and (d)?</p>
+</li><li> How does the spread of probabilities in these plots compare to those for the models in Part (c) and (d)?</li></ol>
+<p></p>
+<p>However in part d we are only asked:</p>
+<p>How many of the coefficients estimated by the multiple logistic regression in the previous problem are significantly different from zero at a <em>significance level of 95%</em>?</p>
+<p></p>
+<p>What model does e refer to? Is this a typo for just (c) or are we also supposed to fit a model with the significant predictors after bootstrapping?</p>
+<p></p><p>For some reason I only get 2 dots on the plot produced by visualize_prob and I can&#39;t figure out why.</p>
+<p></p>
+<p>Here is my code:</p>
+<p></p>
+<p>models[&#39;mlogreg&#39;][&#39;est&#39;] = LogisticRegression(C=100000)</p>
+<p>models[&#39;mlogreg&#39;][&#39;est&#39;].fit(data[&#39;Xtrain&#39;].values, data[&#39;ytrain&#39;])</p>
+<p>fig = plt.figure()<br />axis = fig.add_subplot(111)<br /> <br />visualize_prob(models[&#39;mlogreg&#39;][&#39;est&#39;], data[&#39;Xtrain&#39;], data[&#39;ytrain&#39;], ax=axis)</p><p>part e asks us to compare results against models from part d and part c. Are we not just bootstrapping the model from part c in part d? Is this a typo and do we mean the models in part b?</p>
+<p></p>
+<p>edit: I realize the models in part b are only trained on a single predictor. does this mean in part d we should also train a model on all the coefficients significant to a level of 95% (and not just count them)? or are we still using the models from b that only predict using a single gene predictor.</p><p>I got the same accuracy rate for test data, I double checked the code to make sure I didn&#39;t reuse the same variable that might lead to reusing previous results, etc. </p>
+<p></p>
+<p>it seems run multi-logit-regression with all predictors, or fit logit model with pca component, it will lead to the same model. </p>
+<p></p>
+<p>any other suggestions? I don&#39;t feel comfortable they are the same.... Thanks</p><p>I tried to go through HW4 solutions for my HW5, but it seems part of it is missing after part(h). Is it intentional or accidental?</p><p>Maybe I&#39;m reading into this wrong, but are the labels correct? It looks like in my code (and the images of other students on piazza) that the ALL classes are being reported as having probability 1 for AML classes on the graph. Looking at the code, it looks like the positive probabilities being selected are the ones for samples where n == 1 (which indicates AML), but they are then being labeled ALL on the graph.</p><p>I passed the fitted logistic model with train data (over 7000 predictors), and corresponding y, and ax</p>
+<p></p>
+<p>I received following error, any advice? Thanks</p>
+<p></p>
+<pre>IndexError: too many indices for array<br /><br /><br /></pre>
+<p></p>
+<p></p><p>what is the format midterm? online multiple choice or other form. we have 36 hours timeframe, but once it is started, how many hours we have to finish it? Thanks.</p><p>I&#39;ve read through other responses on Piazza and looked at previously provided code, including trying to use the &#34;sample&#34; function in HW4 (or variants thereof). But I&#39;m still struggling to get the bootstrap procedure to execute correctly.</p>
+<p></p>
+<p>If I input something like &#34;X_train.shape[0]&#34; in np.random.choice(), then I get an error saying that many of the values are not in the index.</p>
+<p></p>
+<p>If I input X_train.index or X_train.index.values, it returns (what I think are) the correct indexes, but either then or later on, when I try to fit the multiple logistic model, I still get an error message saying the index values are &#34;not in index.&#34; This happens even if I input it as an array.</p>
+<p></p>
+<p>I figure there must be some way to do this correctly and efficiently with np.random.choice or a similar function, but I can&#39;t seem to get it right.</p>
+<p></p>
+<p>Help, ideas, and/or hints would be great appreciated - thanks!</p><p>we will bootstrap train set for 100 times, and calculate t-stat for coef? Thanks</p>
+<p>this is not cv, so we will not split train set for train/test. correct me if my understanding is not right. Thanks</p><p>after calling LogisticRegressionCV, the return the model is already the best calibrated model?  </p>
+<p>if call .coef_, it only return one set of coef, is this the final results? Thanks</p>
+<p>I called .scores_, how to interpret it?  </p><p> the due date is postponed, may I know how many hours are expected to finish? so I can arrangement accordingly. Thanks</p><p>I&#39;m having difficulties with visualize_prob. Does anyone know what the inputs are supposed to be? What are the first and last arguments supposed to be? </p>
+<p>right now I tried putting in  visualize_prob(fitted model, X, y, axis=0) and get an error message that </p>
+<pre>&#39;int&#39; object has no attribute &#39;plot&#39;</pre><p>I got 100% for train dataset, that is surprisingly high. Not sure if I got something wrong here. </p><p>I&#39;m using the exact method in the HW 3 solutions to standardize but I getting this error. I also tried using .loc </p>
+<p>and it doesn&#39;t run </p>
+<p></p>
+<pre>/opt/anaconda3/lib/python3.6/site-packages/pandas/core/frame.py:2352: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: <a target="_blank" href="http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy">http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy</a>
+  self[k1] = value[k2]</pre><p>I am struggling to understand the interpretation of the PCA scatter plot. </p>
+<p></p>
+<p>Is it simply to show how the magnitude of the PCA components relate to the discrimination between the cancer types?</p><p>In lab 6 we see some code to try to manage the global namespace problem in doing our homeworks in jupyter.</p>
+<p> <br />In case others use things in functions like myvar=globalvar and they aren&#39;t used to python&#39;s scoping rules, this might be useful:<br />From my understanding of python, things like dataframes are essentially global data structures that we can assign multiple names to, but they all point to the same actual data. So if somewhere we change our dataframe&#39;s actual data, even inside of a function (like adding dummy columns, standardizing values, adding the 1&#39;s column), if some other function tries to give the original data a new name thinking it is isolated, it will get all the changed data too.<br /><br />Have I got that right?</p>
+<p></p>
+<p>In the classify_from_dataframe function I see the dataset is converted into headerless arrays to deal with this.</p>
+<p><br />To keep using dataframes with their headers, we need to do explicit copies.<br />not <br /><br /></p>
+<pre>psuedo-local-df = parameter-name-df</pre>
+<p>but instead</p>
+<pre>local-df = parameter-name-df.copy() </pre>
+<p>or something similar like rebuilding the whole df from scratch<br /><br /></p><p>seems now cannot upload file.</p><p>I&#39;m wondering if there could be a little more clarity on how exactly the homework is graded. The course description says grades are based on correctness, interpretation and presentation, how much emphasis is placed on each and how much is each part worth? Is there a standard/rubric for all graders?</p>
+<p></p>
+<p>For example, it seems for HW3 I wrote the correct code for all sections, but had two mistakes in the written portion (interpretation), and overall I was given 4/5. So is it reasonable to assume each mistake is worth -0.5 points?</p>Q: Which among the predictors have a positive correlation with the number of bike rentals?
+
+The answer according to the solution is [const, humidity, windspeed, season_4.0 (winter), weather_3.0 (rain)].
+However, some of these coefficients are negative. If so, how are they positive correlation? Isn&#39;t it a negative correlation?
+
+Thanks.<p>Using the digits data for the lab, I tried using sklearn&#39;s logistic regression, but with multi_class=&#39;multinomial&#39; parameter and the original dataset with unfiltered targets. SKLearn gives you 4 different solvers (the default does only binary classification) and got different accuracy rates for the same datasets. That was surprising to me since I figured the different solvers had different performance characteristics or some extra features you could choose.</p>
+<p></p>
+<p>Will non-binary classification be covered in this class in which case I can wait to learn why I saw what I did? If not, can you give me some hints for further investigation?</p><p>when do cv, should we follow procedure in hw3, about how to use sklearn split function? or there will be new something new taught on Monday? <br /><br /></p>
+<p>when do cv, should we just keep split train data generated on part a? Thanks</p><p>In minute 18 of the video (In[31] in the notebook), </p>
+<p>dftwo[list(range(64))] is used to include every column in the table except the labeled column. But that makes making changes to the dataframe harder since this method is an indirect method of doing what is needed, which is simply removing the labeled column.</p>
+<p></p>
+<p>Meilur-Page Jones would say the data definition is <strong><em>encumbered</em></strong> by some code somewhere in the program, not easily identified.</p>
+<p></p>
+<p>Better to be explicit.</p>
+<p></p>
+<p>dftwo.drop([&#39;target&#39;],axis=1)</p>
+<p></p>
+<p>Then no matter how you change the dataframe definition (except changing the existence or name of the labeled column), the rest of your code will be less likely to behave unexpectedly (or worse, behave unexpectedly and unnoticed). And as a bonus, that line of code is more readable/understandable.</p>
+<p></p><p>Hi,</p>
+<p></p>
+<p>On Part (e) of the pset, it says &#34;fit a logistic regression model on the first set of principal components contributing to 90% of the variance in the predictors&#34;.</p>
+<p></p>
+<p>I am a little confused on how to do this. Before we doing PCA we looked at explained_variance_ratio_ to select components that explain the variance in y. Is that what we want to do here (just wanted to check)? If not, I am kind of confused on how to check  variance of all predictors (a lot of features) and how PCA stacks up. </p>
+<p></p>
+<p>Thanks!</p><p>Hi, I noticed that in the solution set of part g, print(X_train.shape) yields (400, 28). It seems that the training set has 331 observations, while the test set has 400. This discrepancy also leads to different answers in the previous parts. Am I using training and test sets different from the solution? Thanks.</p><p>In the solution set for part f the non-regularized model has an R squared = 0 for ALL sample sizes of randomly drawn training data. So the model is completely random and gives no explanation of the data? Also the lasso and ridge models have a negative value of R squared on the training data. </p>
+<p></p>
+<p>If I see R squared below 0 for test data, that tells me my model is not so good, but I don&#39;t ever expect to see r squared for training data. Or is R squared some how redefined in the way this homework solution was done?</p><p>Does anyone know where we talked about bootstrapping in the lectures/sections/lab? I don&#39;t recall.</p><p>Instructors,<br />Could you post homework solutions <strong>as soon as</strong> the deadline to turn in homework is over? (e.g. please post HW 4 solutions now)</p>
+<p></p>
+<p>Since the materials in this course build upon each other, it is not uncommon for something in the immediately previous homework being relevant to how you do the current homework.</p>
+<p></p>
+<p>Since graded homework is a week (or more as with HW3) before we get it, we can&#39;t even know if we did something right, much less know the right answer in the immediately previous homework until after the current homework is due to be handed in. So we have less opportunities to learn from our mistakes before making the same mistake again in the current homework. Or it takes us much longer to figure things out.</p>
+<p></p>
+<p>Thank you</p>
+<p>Jeff</p>
+<p></p><p>when do this problem, should we use code provided at the begining of homework? </p>
+<p>msk = np.random.rand(len(df)) &lt; 0.5<br />data_train = df[msk]<br />data_test = df[~msk]</p>
+<p></p>
+<p>so we will get 100 sample of each coef, and use that to calculate t-stat and p-value? Thanks</p>
+<p></p>
+<p></p><p>does sklearn .score is similar to statsmodels &#39; Pseudo R-square after getting logistic model from two different package? Thanks</p>
+<p></p>
+<p>I would like to do a consistency comparison, but sklearn gave very high R2 than statsmodels, while statsmodels&#39; pseudo r2 is very close to 1-misclassification rate?</p>
+<p></p>
+<p>Thanks</p><p>what is the return type of  logisticRegressinModel.predict, I use it the same way of returned object from linear regression model.predict, but it dosen&#39;t work, report NaN error. any advice? Thanks</p><p>does <code>statsmodels logit model has parameter setup sk.LogisticRegression(C = 100000000000000000)? </code></p>
+<p></p>
+<p>I checked the doc , cannot find. also check the lecture notes, seems they didn&#39;t care about C setup when use statsmodels..</p>
+<p></p>
+<p>should we stick  on sklearn model for this assignment? Thanks</p><p>When I use visualize_prob, I&#39;m running into some trouble with ypos.</p>
+<p></p>
+<p>I believe the line:</p>
+<pre>ypos = y_pred[y==1]</pre>
+<p>is supposed to be a &#34;mask&#34; index array, so it should be returning a masked version of the 2D y_pred array, but instead it&#39;s just returning a 1D array with the warning:</p>
+<p></p>
+<pre>C:\Users\User\Anaconda3\lib\site-packages\ipykernel_launcher.py:1: VisibleDeprecationWarning: boolean index did not match indexed array along dimension 1; dimension is 2 but corresponding boolean dimension is 1
+  &#34;&#34;&#34;Entry point for launching an IPython kernel.</pre>
+<p></p>
+<p>Consequently, when I call the visualize_prob function, I get the error:</p>
+<pre>IndexError: too many indices for array</pre>
+<p>and it points to the line:</p>
+<pre>pos_handle = ax.plot(np.zeros((npos,1)), ypos[:,1], &#39;bo&#39;, label =&#39;ALL&#39;)</pre>
+<p>so I think it&#39;s referring to ypos.</p>
+<p></p>
+<p>Am I just misunderstanding what ypos is supposed to be? Has anyone else had this problem?</p><p>when we &#34;plot quantitative output from linear regression model&#34;, should we convert it to 0/1 based on 0.5 criteria first? Thanks</p><p>can we scale the whole data set? instead of scale train/test after random split the whole data set? Thanks</p><p>Hi,</p>
+<p></p>
+<p>I am a little confused on the heatmap. Is the goal to create a heat map with Cancer type (0 and 1) on the y-axis and then those genes on the x? I was thinking of doing a sum by group to do but then realized I&#39;m not exactly sure what you want the cells to represent (total expression for that gene or some other metric)</p>
+<p></p>
+<p>Thanks!</p><p>I am confused on how we determine the best number of pca components using Grid searchcv or logistic regressioncv?</p>
+<p>Gridsearchcv gives model with best lambda as best params. So how do we find pca components.</p>
+<p>The functions used in the lab, I don&#39;t see they are applicable here.</p><p>Embarrassingly, I got q2 on quiz 10 wrong and I want to make sure I am understanding the material. </p>
+<p></p>
+<p>I am wondering if the wording of the question was poor.  I think this is important since I found hw3/hw4 to be extra challenging due in part to confusion over what was being asked.  It&#39;s really throwing in to doubt whether I am successfully understanding the material.  </p>
+<p></p>
+<p>In particular, for q2, I found the following very confusing ...</p>
+<p></p>
+<blockquote>
+<pre>A one-unit increase in X is associated with a β1 <br />increase in the log odds that Y=1.</pre>
+</blockquote>
+<p>2 things tripped me up on this statement ...</p>
+<p></p>
+<p>First, &#34;X is associated with β<sub>1</sub> increase ...&#34; sounded like gobbledygook to me.   It sounded like it was saying that β<sub>1</sub> would increase along with X.   I think it would have been clearer if it had said &#34;A one-unit increase in X is associated with a log odds (of Y=1) increase by β<sub>1</sub>&#34;.  </p>
+<p></p>
+<p>Secondly, the use of the word &#34;increase&#34;.  Won&#39;t the log odds decrease when β<sub>1</sub> is negative?  </p>
+<p></p>
+<p>Thanks for any clarification.</p><p>I have noticed the following issues with visualize_prob and was wondering if anyone had the same issue and what their work around was.</p>
+<p></p>
+<p>1. I keep getting the error (name &#39;np&#39; is not defined) when I run the function</p>
+<p></p>
+<p>2. The points on the plot do not show up without changing the shape from &#39;x&#39; to dots</p><p>I am curious how long people spent on this homework vs the previous 3. Or perhaps the question should be did any of the homeworks take you much longer than average and if so, which one(s).</p><p>Question asks:</p>
+<p><strong>To account for these differences in scale and variability, normalize each predictor to vary between 0 and 1.</strong></p>
+<p><strong></strong></p>
+<p>But it would make sense that some gene expression patterns are negative. Can we get clarification on how to normalize the predictors? </p>
+<p></p>
+<p>Thanks.</p><p>Hi, </p>
+<p></p>
+<p>Has anyone gotten visualize_prob(x) function to plot anything?</p>
+<p></p>
+<p>At first, it gives a np undefined error. I then copy and pasted the code into my notebook. The function now runs but plots nothing on the plot.</p>
+<p></p>
+<p>Has anyone encountered this and got around the problem?</p>
+<p></p>
+<p>Thanks!</p>Hey guys,
+
+My partner and I are trying to submit PSet4 (using our 2 late days), but are unable to join a group as they have all been locked. What exactly should we do here to ensure our submission is considered as a group.<p>In hw3_solution, why you use mean and std of test data to normalize the test data set? Shouldn&#39;t it be mean and std in training data?</p><p> which data is this referring to? The normalized gene expression dataset overall or the few genes we looked at in the previous bullet-point?</p>
+<p></p>
+<p>A point of constructive criticism: I know the instructors can&#39;t think of everything and that communicating over problem sets online is difficult - but these questions are generally not written clearly. Simply figuring out what&#39;s being asked between the poor wording and contradicting content, and then waiting for clarifications from the instructors on Piazza, adds quite a lot of time towards how long these problem sets take. I think an extra ten minutes of effort in editing the questions would drop my own time-for-completion by quite a bit. I imagine it&#39;s similar for others. </p><p>I keep getting an error:</p>
+<pre>Number of manager items must equal union of block items
+# manager items: 7130, # tot_items: 7131
+</pre>
+<p>Even though the same code (.sort_values(&#34;Cancer_type&#34;)) works on the test set.</p><p>In the beginning of part (b), it says &#39;Begin by analyzing the differences between using linear regression and logistic regression for classification. For this part, you shall work with a single gene predictor: <strong><code>M23161_at</code>.</strong>&#39;</p>
+<p></p>
+<p>Then second line it says &#39;Fit a simple linear regression model to the training set using the single gene predictor <strong><code>D29963_at</code></strong>. We could interpret the scores predicted by regression model interpreted for a patient as an estimate of the probability that the patient has the <code>ALL</code> type cancer (class 1). Is there a problem with this interpretation?&#39;</p>
+<p></p>
+<p>Which gene predictor are we supposed to use?</p><p>In the main question, it says &#34;The first column contains the cancer type, with <strong>0</strong> indicating the <strong>ALL class</strong> and <strong>1</strong> indicating the <strong>AML class</strong>. &#34;</p>
+<p></p>
+<p>Whereas in part (b) it says &#34;The fitted linear regression model can be converted to a classification model (i.e. a model that predicts one of two binary labels 0 or 1) by classifying patients with predicted score greater than 0.5 into the <strong><code>ALL</code></strong><strong> type (class 1)</strong>, and the others into the <strong><code>AML</code> type (class 0)</strong>&#34;</p>
+<p></p>
+<p>Which one should we take?</p><p>if we&#39;ve already normalized the dataset from hw3, and reused it for question f-g, should we just use it for question for pca? we don&#39;t need to normalize dummy variable, right? Thanks</p><p><a href="http://davegiles.blogspot.com/2011/09/micronumerosity.html">http://davegiles.blogspot.com/2011/09/micronumerosity.html</a></p>
+<p></p>
+<p>Short, funny, memorable. The best kind of stats lesson. ;-)</p>
+<p></p>
+<p>That old, yet funny article would be even more relevant by choosing politics instead of economics. A field where very well-paid pundits try to decrease their micronumerosity by quoting years instead of elections : i.e. It&#39;s been 28 YEARS since Pennsylvania voted for a GOP President, so no need to worry about that for 2016.</p>
+<p></p>
+<p>I sometimes why they don&#39;t hide their micronumerosity even further by telling us how many months or days it&#39;s been since that last &#34;rare&#34; event. (Trump&#39;s election broke a string of more than 10,000 days since Pennsylvania last went GOP).</p>
+<p></p>
+<p>;-)</p>
+<p></p>
+<p></p><p>In fitting the PCA in HW4 I am getting r squared values between 0 and 1 for the training data, however with 3, 4, and 5 components my r squared for testing data is less than -1. I&#39;ve read online that an r squared below -1 for testing data is acceptable and simply shows the model is a bad fit. Is this true or is there something wrong with my code?</p><p>I am trying to take the quiz and download the new homework, but in both cases I get the error that they are part of an unpublished module and not available yet. Am I unique in this, or is it supposed to be unavailable still?</p><p>It says &#34;being careful to follow the column concatenation step described in the paper&#34; </p>
+<p></p>
+<p>They say &#34;Each gallery image s downsampled to an order c x d and transformed to vector through column concatenation&#34; along with cd &lt; ab. What are c and d? </p><p>When I try  to save pdf by latex it cuts and doesn&#39;t save. When I try to print in IE and save as pdf it saves only 1st page of homework.</p>
+<p>How do I save in pdf?</p>
+<p></p>
+<p>I am using windows os</p><p>is there a nice way like linear model .summary to get list of coef as a results of ridge or lasso? do we need to compare coef of all results for lamda  {10^-5, 10^-4, .... 10^4, 10^5}</p>
+<p>coef_.ravel()?</p>
+<p></p>
+<p>can we pick the one with best r2 to compare coef between ridge, lasso, and normal linear? Thanks</p><p>I&#39;ve been stuck for hours trying to figure out what was wrong with my code when I used the list() function and got</p>
+<pre>&#39;list&#39; object is not callable
+</pre>
+<p>After too many hours, I tried an example that I got from python documentation and it still gives me the same error. I have checked if I have overwritten the function, I have restarted my kernel numerous times, restarted my computer, and still I am unable to get this function to work on code that was given in documentation. </p>
+<p></p>
+<p>The strangest thing is that I use the function above in another cell and it works when I run the cell. Is there anything I can do?</p><p>For part (j), the question states &#34;It is known that roughly 5% of the labels in the training set are erroneous (i.e. can be arbitrarily different from the true counts)&#34;.  What does a label error mean?  Is this saying the count value is wrong for 5% of the rows or the actual labels for the columns are wrong?</p>1. For part h, should we a) include all interaction terms up to the fourth degree (for example, including temp^2 * workingday=1 * atemp^3 * humidity)? Or should we b) only include binary interaction terms (for example, temp^2 * workinday)?
+
+2. If the answer to #1 is a, should we eliminate interaction terms that include redundant polynomial terms (like temp * temp^2 * temp^3 * workingday=1)?<p>add polynomial term for continuous predictors X^2, X^3,X^4 and interaction term between all dummy and continuous predictors, and polynomial term with dummy variables</p>
+<p>final matrix size 706, drop those 0 columns(when sum and std both are 0), final size 595</p>
+<p></p>
+<p>PCA explain power  vector 0.25, 0.11, 0.09....etc kind of low</p>
+<p>feed 1/2/3/4/5 vectors, all negative test r2,, this negative number doesn&#39;t sound right? Thanks</p><p>is it upto us for which kind model selection to use?</p>
+<p></p>
+<p>are we required to calibrate the model coef based on rmsle? or we could also do predictor selections based on rmsle? Thanks</p><p>when np.log(y&#43;1)-np.log(y_pred) &lt;0, this function will produce NaN,  should we just assign a supper big number? thanks</p><p>I was trying to drop columns with all zeros for the training and test set. But the numbers of columns after  that step don&#39;t agree. So I couldn&#39;t fit the PCA model and I am stuck at this point. Any thoughts why this could happen is appreciated!</p>
+<p></p><p>Hello, I keep getting this error - I think my limit is set too low.</p>
+<p></p>
+<p>Is there some way to adjust this?</p>
+<p></p>
+<p>Thanks,</p>
+<p>d</p>
+<p></p><p>In HW3 solution, part B, result.summary( ) returns coefficients by their named variables, but when I try to replicate this in my code, I get &#34;X1&#34;, &#34;X2&#34;, etc. in the output chart instead of the variable names &#34;holiday&#34;, &#34;workingday&#34;, etc. In the solution, what is allowing the .summary( ) output to display the actual variable names?</p><p>Hi guys,</p>
+<p></p>
+<p>I have my data normalized from the last pset and am trying to figure out if I should normalize it before or after creating the polynomial/ interaction terms.</p>
+<p></p>
+<p>I understand that we normalize to decrease multicollinearity but am confused about the point in the process at which this should happen.</p><p>When I set alpha = 0 for the Ridge and Lasso regressions I get very weird values for the holiday and workingday coefficients, but all the other coefficients are exactly the same as the OLS I did in HW 3. </p>
+<p></p>
+<p>Any idea on why these values would be so different?</p>
+<p></p>
+<p>I&#39;m not sure exactly what you mean by using different days as the base, but I didn&#39;t change anything about the training sets I used and I tried to keep my calls to the different types of regression as similar as possible.</p><p>Are we supposed to plot all of the regression mean scores in 1 plot each for train and test ?  </p>
+<p></p>
+<p>With errobars the data sits on top of each other as we are plotting over sample size.  </p><p>I ran the following code to produce the interaction factors:</p>
+<p></p>
+<p>polynomial_features = PolynomialFeatures(degree=1, interaction_only=True, include_bias=False)<br />poly = polynomial_features.fit_transform(X_train)<br />print(poly)</p>
+<p></p>
+<p>And it worked -- but now I want to verify that the factors I *think* I produced are the ones I actually produced. However, there are no labels here. Is there an easy way to tell what PolynomialFeatures actually *did* once I ran fit_transform?</p>
+<p></p>
+<p>THANKS!</p>
+<p>d</p><p>I tried below code to drop col that are all 0, but have error:, if take inplace =True off, no error, but doesn&#39;t seem right, any suggestions? Thanks</p>
+<p></p>
+<p>for i in range(0,X_train_dummy_part_poly_2_pd.shape[1]):<br /> if(np.sum(X_train_dummy_part_poly_2_pd.loc[:,i])==0 and np.std(X_train_dummy_part_poly_2_pd.loc[:,i])==0):<br /> X_train_dummy_part_poly_2_pd_drop=X_train_dummy_part_poly_2_pd.drop(X_train_dummy_part_poly_2_pd.columns[[i]], axis=1,inplace=True)<br /> <br /><br /></p>
+<p>error</p>
+<pre>KeyError: &#39;the label [30] is not in the [columns]&#39;</pre><p>List the predictors that are assigned a coefficient value close to 0 (say &lt; 1e-10) by the two methods. How closely do these predictors match the redundant predictors (if any) identified in <strong>Part (c) from HW 3?</strong></p>
+<p><strong></strong></p>
+<p>Part c from HW3 was the collinear heatmap. Should we compare to Part (d), which is the forward and backward selection models?</p><p>for part g, when we are asked to make a model with the interaction terms, should we keep the polynomial terms in there as well?</p><p>could you give more detail on: &#34; Instead, we ask you to think about ways to use existing built-in functions to fit a model that performs well on RMSLE.&#34;? should we use stepwise forward /backward and RMSLE for model selection? Thanks</p>
+<p></p>
+<p>or some other CV but with RMSLE? Thanks</p><p>After reviewing the posted HW3 solutions, I have two minor questions/concerns:</p>
+<p></p>
+<p>The all-in-one graph utility function is a nice trick. Unfortunately, like the &#34;number of X per county&#34; become US population graphs, these histograms better represent the difference between the number of weekdays and number of weekends than they do the differences in rentals between those days. (It&#39;s most misleading for infrequent traits like holidays or snow days.)</p>
+<p></p>
+<p>Would putting the two counts on different axis, or somehow normalizing the histograms against the number of events help?  I drew some slightly different conclusions after looking at boxplots of the data for these pairwise traits, which tell a different story than these histograms.</p>
+<p></p>
+<p></p>
+<p>Last, in [11], the test_df is normalized using the test mean_t and std_t instead of normalizing against the training values. The question states:<em> &#34;We emphasize that the mean and SD values used for standardization must be estimated using only the training set observations, while the transform is applied to both the training and test sets.&#34;</em></p>
+<p><em></em></p>
+<p></p>
+<pre>test_df[numerical_columns] = (test_df[numerical_columns] - mean_t)/std_t</pre>
+<p>Should be?:</p>
+<pre>test_df[numerical_columns] = (test_df[numerical_columns] - mean)/std</pre><p>when call  pca.transform, is first column 1st pca vector, 2nd col is 2nd pca vector, etc? Thanks</p><p>when feeding PCA, should we drop the constant term added for polynomial regression? Thanks</p>
+<p></p>
+<p>I think we don&#39;t need to .</p><p>for continuous variables, we will include X2,X3,X4, but no interaction term between them</p>
+<p>for categorical variables, we will include all interaction terms within them, and interaction terms with continuous variable, (but not x2,x3,x4)</p>
+<p></p>
+<p>when create dummy variable, we dropped first or last column, should we also create interaction term for them? (only add interaction term, still drop those which was dropped earlier)?</p>
+<p></p>
+<p>Any advice? Thanks</p><p>Hi, can we get a hint on how to approach part j?</p>
+<p></p>
+<p>I&#39;ve tried taking out the data points with the top 5% most extreme residuals.</p>
+<p>I&#39;ve tried resample the training data to make a larger dataset to train on.</p>
+<p>Nothing seems to work.</p>
+<p></p>
+<p>Thanks!</p><p>part g: first part question:</p>
+<p>for 4 continuous predictors, PolynomialFeatures(degree=4, interaction_only=False) will generate total 70 columns, I am not sure if I did it right or not, anybody any advice? Thanks</p>
+<p></p>
+<p>do we need to manually remove those interaction terms? Thanks</p>
+<p></p>
+<p>ok, I manually added those term in , and final data set is about 40 columns. somehow I still get negative R2 for test data.</p><p>on test data set, I got negative value, around -1.27, I know it could signal an ill fitted model, but could also mean something is wrong, any advice? Thanks</p><p>Can someone clarify which feature set to use for part i and part j?</p>
+<p></p>
+<p>Thanks!</p><p>Has anyone seen this Navigator error before? It was working fine for me last night but now it won&#39;t launch.</p>
+<p></p>
+<p>An unexpected error occurred on Navigator start-up</p>
+<p>psutil.AccessDenied (pid=10916)</p>
+<p></p>
+<p>Traceback (most recent call last):<br />File &#34;C:\Users\Jackie\Anaconda3\lib\site-packages\psutil\_pswindows.py&#34;, line 620, in wrapper<br />return fun(self, *args, **kwargs)<br />File &#34;C:\Users\Jackie\Anaconda3\lib\site-packages\psutil\_pswindows.py&#34;, line 690, in cmdline<br />ret = cext.proc_cmdline(self.pid)<br />PermissionError: [WinError 5] Access is denied<br /><br />During handling of the above exception, another exception occurred:<br /><br />Traceback (most recent call last):<br />File &#34;C:\Users\Jackie\Anaconda3\lib\site-packages\anaconda_navigator\exceptions.py&#34;, line 75, in exception_handler<br />return_value = func(*args, **kwargs)<br />File &#34;C:\Users\Jackie\Anaconda3\lib\site-packages\anaconda_navigator\app\start.py&#34;, line 108, in start_app<br />if misc.load_pid() is None: # A stale lock might be around<br />File &#34;C:\Users\Jackie\Anaconda3\lib\site-packages\anaconda_navigator\utils\misc.py&#34;, line 384, in load_pid<br />cmds = process.cmdline()<br />File &#34;C:\Users\Jackie\Anaconda3\lib\site-packages\psutil\__init__.py&#34;, line 701, in cmdline<br />return self._proc.cmdline()<br />File &#34;C:\Users\Jackie\Anaconda3\lib\site-packages\psutil\_pswindows.py&#34;, line 623, in wrapper<br />raise AccessDenied(self.pid, self._name)<br />psutil.AccessDenied: psutil.AccessDenied (pid=10916)</p>
+<p></p>
+<p>I saw a suggestion to update Anaconda but I&#39;m on Windows and </p>
+<pre>conda update anaconda-navigator</pre>
+<p>isn&#39;t working. The command prompt is telling me: &#39;conda&#39; is not recognized as an internal or external command,<br />operable program or batch file.</p><p>does sklearn linear regression model has t-value for coef ready or we need to calculate from scratch? Thanks</p><p>when call fit_transform(X_train), it seem ad a constant column 1, should we keep it when fit polynomial model? I remember for sklearn linear model, we don&#39;t need to add constant term. thanks</p><p>In part i, the function takes log(y &#43; 1). But since we&#39;re using normalized data, there values in the counts column that are less that -1, so the function throws up an error because it&#39;s trying to take the log of a negative number. Are we supposed to un-normalize the data and predictions to use this function?</p><p>- Repeat the above experiment for 10 random trials/splits, and compute the average train and test $R^2$ across the trials for each training sample size. Also, compute the standard deviation (SD) in each case.</p>
+<p></p>
+<p>In this question, I use RidgeCV to pass the split of 10. I can get R-square values for train and test which is the average of these 10 r-square splits , but there is no way the function allows to get the SD of 10 splits.</p>
+<p></p>
+<p>So is the SD asked across list of  [100,150,200...400] sample sizes per Ridge and Lasso ? Same for average?</p>
+<p></p>
+<p>Please let me know if I am on right track.</p>
+<p></p>
+<p>Thanks!</p><p>when use ridgeCV, still set intercept=True? Do we need to use the same alpha range as first part of this question? Thanks</p><p>At the end of question &#34;f&#34; is the following question calculate &#39;the confidence intervals for the estimated R2R2&#39;</p>
+<p>I have never seen confidence interval calculated for R-squared. Can you please clarify what we are meant to do? Thanks!</p><p></p><ul><li>Fit linear, Ridge and Lasso regression models to each of the generated sample. In each case, compute the R2R2 score for the model on the training sample on which it was fitted, and on the test set.</li><li>Repeat the above experiment for 10 random trials/splits, and compute the average train and test R2R2 across the trials for each training sample size. Also, compute the standard deviation (SD) in each case.</li></ul>
+<p></p>
+<p>I don&#39;t understand what 10 random trials/splits refers to. I&#39;m generating samples of the 150 -&gt; 400 by 50s sizes. I then store each of the derived dataframe values in a dictionary. {100: (xvalues, yvalues), 150: (xvalues, yvalues), etc...}. I then run LassoCV and Ridge CV as well as LinearRegression across these samples (the x and y values), storing the models away.</p>
+<p></p>
+<p>So what does 10 random trials/splits refer to? 10 random of the cross validation splits? So I go into the 100 sample, do a cross validation and one of those splits I pull out as 1 of my 10 trials/splits? </p>
+<p></p>
+<p>Or is it I take each sample xtrain, ytrain and cut it up into 10 folds, run linear regression, Lasso, and Ridge, and average my $R^2$? This one seems to make the most sense. </p><p>Can anyone give a hint how to use Maximum Likelihood Estimation to generate a linear regression model? I&#39;m just totally lost about this problem. And also how do we specify the noise for the two distributions?</p><p>what is a design matrix?</p>
+<p></p>
+<p>&#34;Create an expanded training set including all the desired terms mentioned above. What are the dimensions of this &#39;design matrix&#39; of all the predictor variables? What are the issues with attempting to fit a regression model using all of these predictors?&#34;</p><p>Correct me if I have this wrong:</p>
+<p>We run 2 regularization types times 11 lambdas and then analyze the 29 coefficients from each of those 22 tests (29x22=632 different values) times whatever the factorial/exponent is on the combinations we should contrast to see what is relevent, explain oddities.</p>
+<p></p>
+<p>Then we do 9 samples sizes x 2 regularization types (presumably we figured what lambas to use from above and they are good choices on all sample sizes) x 2 data partitions (test and train) x 2 (original and 10 trials) x 2 stats (R2 and its SD) = 144 numbers and then make some conclusions about those.</p>
+<p></p>
+<p>Finally there is this:<br /><em>Based on the plots, which of the <strong>three</strong> methods would you recommend when one needs to fit a regression model using a small training sample?</em></p>
+<p></p>
+<p>Which of what three?</p>
+<p></p>
+<p>I can generate lots of statistics and even do it in not much code. I am less confident however, that I can intelligent analyze all those variations.</p><p>LassoCV and RidgeCV give me different model selection than our gridsearch method. Should that be happening?</p><p>The problem set doesn&#39;t specify the number of folds to be used for cross-validation. Do we set aside 20% of the training set to be subdivided into validation sets? Or some other percentage?</p><p>We train based on Ridge/Lasso/Linear models but we want to optimize(minimize) RMSLE for train/test, Can someone give a hint how to even approach this? RMSLE doesn&#39;t seem to relate to Ridge/Lasso/Linear models. </p>
+<p>I can train model based on Ridge/Lasso/Linear and get RMSLE for them and select best among them but doesn&#39;t seem to be a good approach.</p><p>Can someone clarify how to use RidgeCV to choose the shrinkage parameter, lambda? I&#39;m not understanding what exactly RidgeCV outputs, and it seems to be an alpha cv not a lambda cv given what is taken in.</p><p>Fit a multiple linear regression model with additional interaction terms &#x1d540;month=12×temp and &#x1d540;workingday=1×&#x1d540;weathersit=1 and report the test R2 for the fitted model. Do we add on to the previous model with polynomial terms, or start with another fresh linear model with interaction terms?</p><p>Can someone please clarify what the expanded training set is in g and h?</p>
+<p></p>
+<p></p><p>Fit a multiple linear regression model with additional interaction terms &#x1d540;month=12×tempImonth=12×temp and &#x1d540;workingday=1×&#x1d540;weathersit=1Iworkingday=1×Iweathersit=1</p>
+<p></p>
+<p>I have dropped the first columns after doing hot encoding, so weathersit=1 is dropped from the data, do we need to again process the raw data and include first column from hot encoding?</p><p>For the first part of (g), do we include the interaction terms the sklearn preprocessing adds or literally only X2, X3, X4 terms for the continuous variables?</p><p>After reading HW4 section j and looking at the residuals in HW3 part b both for the test and training set, it really looks to me as if the &#39;test set&#39; contains the outliers/errors. Also, pretty much all parts of HW3/4 work a lot better when swapping test and train sets.</p>
+<p>Does anybody else observe this?</p>
+<p>Could an instructor please confirm that there was no mixup and that the training set is the one with 331 samples and the test set has 400 samples?</p>
+<p>thanks.</p><p>From the question: </p>
+<p></p>
+<p><strong>We would like to fit a model to include all main effects, polynomial terms up to the 4th4th order, and all interactions between all possible predictors and polynomial terms (not including the interactions between Xj^1, Xj^2, Xj^3, and Xj^4 as they would just create higher order polynomial terms).</strong></p>
+<p><strong></strong></p>
+<p>Does this mean we would want interaction terms between Xi^1, Xj^2 for i not equal to j?</p>
+<p></p>
+<p>How do we avoid  Xj^1, Xj^2 interaction using the PonomialFeatures function? Or do we make the interactions first and then manually remove unwanted columns?</p>
+<p></p>
+<p>Thanks!</p>
+<p></p><p></p><ul><li> Fit linear, Ridge and Lasso regression models to each of the generated sample. In each case, compute the R2 score for the model on the training sample on which it was fitted, and on the test set.</li><li>Repeat the above experiment for 10 random trials/splits, and compute the average train and test R2 across the trials for each training sample size. </li></ul>
+<p>What is the value of lambda (alpha) we need to take, If best lambda is automatically selected based on RidgeCV and LassoCV and we pass cv = 10 in first part, what additional thing we are doing in second except standard deviation?</p>
+<p></p>
+<p></p><p>I am getting negative R2 values on the test set when fitting degree 4 polynomial (on continues variables only) multiple least squares. Fitting degree 1/2/3 gives me positive R2&#39;s where degree 1 is just equal to what was generated in HW3.</p>
+<p></p>
+<p>Should we be expecting this (i.e., negative R2 for degree 4 on the test set)? </p><p>Do we still have access to office hours on Monday? It is a holiday though.</p><p><img src="https://d1b10bmlvqabco.cloudfront.net/attach/j6qqcqfmotn3ox/isknzgh3ord2wf/j8huc3wbagum/Screen_Shot_20171007_at_5.37.15_PM.png" alt="" /></p><p>In hw4, advanced section- 2a)</p>
+<p></p>
+<p>We are asked to construct the Hi hat matrix from known faces.</p>
+<p></p>
+<p>I do not understand where I get the matrix of known faces from?</p><p></p><p>In part(g) second question, it asks us to fit a multiple linear regression model with additional interaction terms. Do we need to include the polynomial terms generated in the first question as well? Or should we fit the model just with the predictors in part(b) and the interaction terms?</p><p>When I run the rmlse I get a &#39;nan&#39; error because 3 of my predicted values are large negative values. </p>
+<p></p>
+<p>1. Is anyone else getting this?</p>
+<p></p>
+<p>2. What potential work arounds are we allowed to take - e.g. can we drop those three predictions?</p>
+<p></p>
+<p>Thanks!</p><p>Do we need to modify data or reshape before passing it to the function?</p>
+<p>Here&#39;s my output</p>
+<pre>Ridge(alpha=0.1, copy_X=True, fit_intercept=True, max_iter=None,
+    normalize=False, random_state=None, solver=&#39;auto&#39;, tol=0.001),
+ {&#39;alpha&#39;: 0.1},
+ -2223357.0353470854)</pre><p>On lecture 7 slide 17, it says that our statistical model for linear regression in vector notation is:</p>
+<p>$$y=\beta_0&#43;\sum_{j=1}^J\beta_ix_&#43;\epsilon=\beta^Tx&#43;\epsilon$$</p>
+<p></p>
+<p>Why is $$\beta$$ being transposed?</p><p>In part f, I split training set into training set and validation set, and I trained the model with training data then compute train R2 and test R2 using LinearRegression.score(xtrain,ytrain) and LinearRegression.score(xvalidation,yvalidation) respectively. The train R2 score turn out to be fine but the validation R2 scores are like:</p>
+<pre> -33.158169528740729,
+ -76.456692469565354,
+ -100.57099737325196,
+ -43.096284955714552,
+ -57.685896772493592,
+ -5.397422627986745]</pre>
+<p>I literaly don&#39;t know what went wrong. Please help! Thank you!</p><p>I&#39;m getting huge coefficients on my lasso and ridge regressions, and I suspect something is wrong. I was using my normalized xtrain dataset with all (but one) binarized variables. My ytrain however is not normalized. I&#39;m ending up with a lambda of 1 and coefficients of 1e2 magnitude, which seems very wrong. </p>
+<p></p>
+<p>I just tried without the normalized datasets and I&#39;m getting lots of zeros for lasso now, but my coefficients in both ridge and lasso are still ~ 1e2 order of magnitude.</p><p>Hi, there seems to be some mistakes for my homework2 grading. The grader commented that some of my part 2 and my part 4 in homework2 are missing, but I actually wrote the answers as a comment beneath the question. Can I request for a regrade? </p><p>What is the helpline email address? I&#39;m having trouble finding it.</p><p>How do we encode interaction term if we dropped one of the columns of interest? </p>
+<p>i.e. we&#39;re asked to  get month=12/temp and workingday=1/weather=1, but I have weather =1 dropped.</p>
+<p></p>
+<p>Thanks!</p>
+<p></p><p>Why was it suggested to drop one column for all the categorical data? </p>
+<p></p>
+<p>I understand, why it is necessary when an attribute is bivariate. That is holiday or no holiday. If we do not delete a column in this case it will produces two features which are perfectly negatively correlated.</p>
+<p></p>
+<p>But why would we want to do to delete one column if the attribute is not bivariate. Eg. if we create dummies for month, and delete the last column(say &#39;dec&#39;, wouldn&#39;t we loose information? </p><p>Hello,</p>
+<p></p>
+<p>Since HW4 builds upon HW2 for the Advanced part, it would be useful to get either feedback or answers to the toy problem. Is it planned to release? Cheers.</p><p>In HW4 part(f) we are asked to &#39;generate random samples of sizes 100, 150, ..., 400 from the training set.&#39; But I think the training set only has 331 observations...</p><p>I&#39;m getting test R2 values for both forward and backwards selection that are lower than my test R2 values using all the predictors, and can&#39;t seem to find anything wrong with my code. </p>
+<p></p>
+<p>Is there something that I am missing?</p><p>In part b, we are asked to plot the residuals. Should we have 2 separate graphs, 1 for the test set and 1 for the training set?</p><p><a href="https://canvas.harvard.edu/courses/32795/pages/lecture-video">https://canvas.harvard.edu/courses/32795/pages/lecture-video</a></p>
+<p><a href="https://canvas.harvard.edu/courses/32795/discussion_topics/245785">https://canvas.harvard.edu/courses/32795/discussion_topics/245785</a></p>
+<p><a href="https://canvas.harvard.edu/courses/32795">https://canvas.harvard.edu/courses/32795</a></p>
+<p></p>
+<p>The info in these three links implies the advanced section on Live Zoom is on Wednesdays between 3 and 4 PM (i.e. now)</p>
+<p></p>
+<p>But I have waited 24 minutes so far and nothing has been turned on .</p><p>In part d) Forward and Backwards selection, we are asked:</p>
+<p></p>
+<p>&#34; How do the test R2 scores for the fitted models compare with the model fitted in Part (b) using all predictors?&#34;</p>
+<p></p>
+<p>But also in part e) Validation, we are asked to:</p>
+<p></p>
+<p>&#34;Fit each of the 3 models on the provided left out test set and calculate  R2&#34;</p>
+<p></p>
+<p>So do we fit the models to the test data twice, or is part d a typo?</p>
+<p></p><p>In lecture material and section I see that the forward selection iterates over predictors something like this:</p>
+<p></p>
+<p>for k in range(1, len(all_predictors))</p>
+<p></p>
+<p>Here, we always miss the last element ( k =len(all_predictors) = total number of predictors).</p>
+<p></p>
+<p>Is it expected? Should stepwise selection exclude the full set of predictors and got to k=n-1 only?</p><p>I&#39;m getting pretty large BICs if forward selection, like 5000-7000? Does it seem right?</p><p>About &#34;<em>For categorical attributes, you should use each binary predictor resulting from one-hot encoding to compute their correlations?</em>&#34;</p>
+<p></p>
+<p> Does it mean all of them and not dropping one? </p>
+<p></p>
+<p>For example, I have holiday_0, but should I recover the holiday_1 dropped during hot-encoding and run collinearity analysis for both? (Same for other categorical)</p>
+<p></p><p>I feel that df.corr() is a better choice for part c. Is it okay to use it? I do not need to transpose the matrix though when using x_train.corr(), right? </p><p>I&#39;m getting negative prediction for line 271. Is this expected? Can i eliminate it somehow?</p><p>Instruction says: &#34;Make a plot of residuals of the fitted model e=y−y^ as a function of the predicted value y^&#34;</p>
+<p></p>
+<p>1) Does it mean that the plot should have y^ on x-axis and errors (=y-y^) on y-axis? It will be only one graph, right?</p>
+<p> </p>
+<p>2) How to know if plot reveals a non-linear relationship between the predictors and response? What should I look for? Any advise or direction is appreciated. I feel that the residuals were very lightly covered so far.</p><p>I&#39;m little confused about adding intercept (e.g sm.add_constant()) for multiple regression in PartB. I understand that it&#39;s always needed if OLS model is used, however let&#39;s say in S-Section 4 in function &#34;exhaustive_search_selection()&#34; it&#39;s not done, thus the confusion.</p><p>I kind of know the answer to &#34;Why shouldn&#39;t we include the test set observations in computing the mean and SD?&#34;, but little unsure of justification. Could someone elaborate a little on this or point in the right direction to research further?</p><p>Can this be explained by just showing the barplot for season and explaining overall the difference between seasons? Or some &#34;effect&#34; measurements need to be calculated?</p><p>Does the question mean working and non-working days? I don&#39;t see the point to overcomplicate and create separate column for weekdays (derived from day_of_week).</p><p>We mistakenly fitted to test data without adding a constant for OLS, and our R2 looked great- very close to our cross-validation R2. After applying sm.add_constant(), our data has the expected shape (n_rows, n_features&#43;1) but our R2 is dramatically lower. Shouldn&#39;t R2 always increase with a more flexible model, which adding a constant for intercept does?</p><p>When we fit the ridge, lasso, and linear regressions to our random samples, should we be choosing one alpha, or do we need to fit them across all the alphas again from the first part of part(f)?</p><p>seems we will use full train data to generate the model, then use cv to get val set and run model to get r2 and get average r2. compare it with r2 from running results on test data? Thanks  </p><p>Are we allowed to use sklearn.modelselection.kfold() for computing our cross-validation in part 1e)?</p>
+<p></p>
+<p>Thanks</p><p>For the second bullet point of part b, we are asked to do a t-test. Are we doing the t-test on the training set or the test set? Thank you!</p>
+<p></p>
+<p><em>(Statistical significance</em>: Using a t-test, find out which of estimated coefficients are statistically significant at a significance level of 5% (p-value&lt;0.05). Based on the results of the test, answer the following questions)</p><p>Are we supposed to split the training data set into a training and validation set for part d? If so how do we determine the appropriate size for each set?</p><p>Hi,</p>
+<p></p>
+<p>I am writing about an abnormal observation regarding HW_3 data. I have just noticed that bikeshare_train.csv is exactly the same as bikeshare_test.csv. So it is difficult to validate my fitted model with another set. Is it a feature or a bug? Can I separate the dataframe by myself? Many thanks for your help</p><p>If my partner and I have different class enrollment status, and so we need to submit hw individually, would the notebooks be graded individually or would only one of the notebooks be graded? </p>
+<p></p>The video labeled &#34;section 4&#34; appears to be section 3, and for some reason, the APCOMP 209 sections are labeled as sections 3 and 5. Is this correct?<p>to answer those questions, could we just use train data do the analysis? Thanks</p><p>Should we include all predictors in the polynomial regression model or just the continuous predictors that we transformed?</p><p>when do 10-fold cv, we will split train set? Thanks</p>
+<p> </p>
+<p>the &#34;left out test set&#34; refer to test data left out from train and val from 10-fold, could you give more detail? Thanks</p>
+<p></p><p>The second part asks us to &#34;Fit each of the 3 models on the provided left out test set and calculate R2.&#34; But didn&#39;t we already apply the 3 models to the test set in the previous parts (b) and (d)? Do we need to re-apply the models and just show the same R2 results as before?</p>
+<p></p>
+<p>Thanks!</p><p>I am extension student and my partner is regular graduate student. It seems the group pages are made by classes names. So we are not able to access the other persons group pages. Is there way that we can submit together on one group?</p><p>Just want to be clear. Do we need to apply both selection methods or just either one?</p>
+<p></p><p>we&#39;ve received confirmation for part d, we will only do either forward selection or backward selection, then part e, should it be just 2 model to compare? one is full predictors multi-regression, 2nd is either forward selection or backward selection from part d? Thanks</p><p>(This isn&#39;t really related to Hwk 4 but didn&#39;t know where to place it so just figured here was as good as any.)</p>
+<p></p>
+<p>I was re-reading the text where the Bayes Classifier is first described, and it says:</p>
+<p></p>
+<p>&#34;It is possible to show (though the proof is outside of the scope of this book) that the test error rate given in (2.9) is minimized, on average, by a very simple classifier that assigns each observation to the most likely class, given its predictor values&#34;</p>
+<p></p>
+<p>And I was thinking - wait - this requires proof?? More than a couple of lines?</p>
+<p></p>
+<p>This seems like a point that&#39;s intuitive, though - so am thinking there must be some subtlety I&#39;m missing in this claim. Would anyone have any light to shed on this?</p>
+<p></p><p>should we use train data set for cv or test dataset? Thanks</p><p>when using bic for subset selection, should we use get a validation set for bic? or we could use train set for bic? Thanks</p><p>In question, it said there are 4 state of weather as below, but train and test data only has 3 state, when use pd.getdummies to generate dummy variable, should we keep all 3 of them, or  just keep 2? Thanks</p>
+<p></p>
+<p>I mean keep 3 dummy variables or 2 dummy variables. Thanks</p>
+<p></p>
+<p></p>
+<ul><li>1: Clear, Few clouds, Partly cloudy, Partly cloudy</li><li>2: Mist &#43; Cloudy, Mist &#43; Broken clouds, Mist &#43; Few clouds, Mist</li><li>3: Light Snow, Light Rain &#43; Thunderstorm &#43; Scattered clouds, Light Rain &#43; Scattered clouds</li><li>4: Heavy Rain &#43; Ice Pallets &#43; Thunderstorm &#43; Mist, Snow &#43; Fog </li></ul><p>I&#39;m confused on how we are supposed to approach the linear regression. Are we supposed to use all of the variables given to us to predict the number of bike rides? Or only the continuous ones? If we&#39;re supposed to use all of them, how do we incorporate the one-hot encoded tables (i.e. do we merge them into the large dataframe)?</p><p>I&#39;m confused about the directions for part a. First, could you explain to me why it&#39;s important to use one-hot encoding? I think I understand how to do it and how to read the data after being encoded, but I don&#39;t understand what benefit this format provides that the original data does not.</p>
+<p></p>
+<p>Second, I&#39;m not sure what parts of the data I should be working with to &#34;standardize the continuous predictors.&#34; I understand continuous predictors to mean numerical attributes, not categorical. Is this correct? Does that mean we should be calculating the mean and SD and doing transformations for attributes such as temp and humidity? </p><p>Good afternoon Instructors,</p>
+<p></p>
+<p>I cannot seem to find any HW3 groups on canvas, and only HW4 groups are showing up. Should I join a HW4 group for HW3, or will they be populated before Wednesday?</p>
+<p></p>
+<p>Best,</p>
+<p>Andrew</p><p></p><p>If you are looking a dataset out of the ordinary:</p>
+<p><a href="https://blog.archive.org/2017/09/06/face-o-matic-data-show-trump-dominates/">https://blog.archive.org/2017/09/06/face-o-matic-data-show-trump-dominates/</a></p>
+<p></p>
+<p>From the people who brought the Internet the Wayback Machine, there is a project monitoring BBC, CNN, Fox and MSNBC that uses facial recognition to record when a famous politician&#39;s image is shown. You can download data on this for your own amusement/interest. They just got started generating data about a month ago. It currently captures data from 5 US currently elected politicians, but they are looking for feedback on which foriegn politicians to add next (Putin? Kim Jong-un? Obama?, you decide).</p>
+<p></p>
+<p>Data Files, dictionaries etc are here</p>
+<p>https://archive.org/details/faceomatic</p><p>we need to apply BOTH for this question? Thanks</p>
+<p></p>
+<p>after fit the model using train set, we will use test set to get BIC for model selection?Thanks</p>
+<p>validation set here is test data set? Thanks</p>
+<p></p>
+<p>There are conflicting instructor responses to this question. See &#64;186. Can an instructor please confirm definitively whether one or both methods must be implemented?</p><p>we will do for both train and test data?</p>
+<p></p>
+<p>and when put whole matrix into one plot, with so many attribute, the plot doesn&#39;t really tell much..</p><p>I am trying to find example for np.corrcoef, but most example takes n*n matrix, in our case, we should use original as first arg, and transposed as 2nd? Thanks</p>
+<p></p>
+<p>got it. should use transposed matrix as input, </p><p>when using reshape to transpose an array, how does it compare to use ...T? Thanks</p><p>I am often seeing test MSE that is lower than train MSE. As an example, for Lab 4 my test MSE is lower than train for all models below 10th degree polynomial, then it jumps well above train MSE for 10 and 11, and then they roughly converge for 12-15. This makes me wonder if I should really be considering the lowest test MSE to be &#34;best&#34; or if I should rather be considering train/test MSE convergence as well? Would that indicate flatter optima, and thus more robust models?</p><p>for categorical variable month, we have 11 dummy variables for it. when do correlation analysis, should be put all 11 variables together with another variable to do the analysis, or each time just pick one dummy variable? Thanks</p><p>http://www.huffingtonpost.com/entry/monty-hall-dies-lets-make-a-deal_us_59d034d5e4b09538b508a9de</p><p>we will need 11 field for month, is that best approach in this case? Thanks</p><p>Hello,<br /><br />The instructions for part d of homework 3 begin with &#34;Apply <strong>either one</strong> of the following...&#34; but later say, &#34;We require you to implement <strong>both</strong> these methods <em>from scratch</em>.&#34;<br /><br />Are we to implement both methods or only one?</p>
+<p></p>
+<p>Thanks :)</p>
+<p></p><p>Can the data files for lecture 4&#43; be provided on git?</p>
+<p></p>
+<p>Files such as: </p>
+<pre>nyc_car_hire_data.csv</pre>
+<p></p>
+<p>Thanks!</p><p>I had a question about the cross validation section of hw3. Basically we are doing 10 fold CV on the training set and then reporting the test R^2. </p>
+<p></p>
+<p>Firstly, it seems to me that we were supposed to talk about the test R^2 from an earlier section - is it ok to simply reference those numbers rather than recalculate them or am I missing something here? </p>
+<p></p>
+<p>Secondly, we initially used the training set to pick out our features through forward selection for example so why are we then cross validating on the same training set - isn&#39;t this fundamentally leaking information?</p>
+<p></p>
+<p>Thanks!</p><p>In the Lect6 slice, it says the cross validation of K-fold is $$CV = \frac{1}{n}\Sigma_{i=1}^KL(\widehat{f}_{C_{-i}}(C_i))$$, why is not  $$CV = \frac{1}{K}\Sigma_{i=1}^KL(\widehat{f}_{C_{-i}}(C_i))$$ ? Thanks.</p><p>For this question: Using a t-test, find out which of estimated coefficients are statistically significant at a significance level of 5% (p-value&lt;0.05).</p>
+<p></p>
+<p>I plan to use the summary method of statmodels (<a href="http://www.statsmodels.org/dev/regression.html">http://www.statsmodels.org/dev/regression.html</a>). Is this acceptable? </p>
+<p></p>
+<p>Thanks!</p><p>Hello,</p>
+<p></p>
+<p>I was wondering for c, why we need to transpose the data matrix? I think I must be missing something</p><p>I am pretty sure that the descriptions for the season variable is wrong (1=spring, 2 = summer, 3 = fall, 4 = winter). Shouldn&#39;t it be this instead: 1 = winter, 2 = spring, 3 = summer, 4 = fall? I did a scatterplot for season vs month before coming up with this. </p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p><p>I tried to use below python code, but could not get any output (no error message/warning either),. nothing could give a hint what might be wrong, any suggestions? Thanks</p>
+<p></p>
+<p></p>
+<p>import seaborn as sns</p>
+<p>features_cols = Bikeshare_df_train.columns[:10]<br />sns.pairplot(data=Bikeshare_df_train,hue=&#39;count&#39;,vars=features_cols)</p>
+<p></p>
+<p></p>
+<p>note: seems pairplot could be very very slow....</p><p>Is anyone is looking for a AC 209 homework partner? </p><p>Will our class incorporate data science techniques that know how to work with autocorrelated data? If not, what course does?</p>
+<p></p>
+<p>Since systems are collecting a larger percent of the data that captures processes (i.e. cause and effect), more and more we have access to data that is autocorrelated. At work I am using process mining to understand the processes, but I don&#39;t currently know techniques to create predictive models from processes that are non-trivial.</p><p>At the start of lecture 7, one student and the instructor talked briefly about ideas to avoid overfitting that involved some randomness and the instructor said his idea had some relationship to notions used in deep learning. These ideas reminded me a bit about genetic algorithms.</p>
+<p></p>
+<p>Are genetic algorithms covered in any courses at Harvard?</p><p>Should we use .std(ddof=1) for sample standard deviation or std(ddof=0) for population standard deviation?</p>
+<p></p>
+<p></p><p>This is rather nit picky but does the weather column only have 3 different types? When I group weather I notice there are only three types of weather yet the description suggests there are 4?</p><p>We need beerdata.csv for hw4 ac209a question 1, but it seems the file hasn&#39;t been uploaded. Where is it? Thanks!</p><p><a href="https://canvas.harvard.edu/courses/32795/pages/lecture-video">https://canvas.harvard.edu/courses/32795/pages/lecture-video</a></p>
+<p></p>
+<p>Clicking on Live Lab (a lab which started 8 minutes ago) just gets you this</p>
+<p></p>
+<p><img src="https://d1b10bmlvqabco.cloudfront.net/attach/j6qqcqfmotn3ox/ibbdd5b49211mb/j84w6a8epqho/noLab.jpg" alt="" /></p><p>Part (d) of HW3 asks that we implement forward or backward selection from scratch, using BIC to choose the subset size. </p>
+<p></p>
+<p>Does this mean we should also calculate BIC from scratch (potentially using RSS to approximate L(beta_MLE)?), or can we use a built-in function to calculate and call BIC when we&#39;re choosing subset size?</p>
+<p></p>
+<p>Thanks!</p><p>If you are ever confused or skeptical about statistical model tests, these arguments might stimulate you to a better understanding.</p>
+<p></p>
+<p><a href="http://mark.reid.name/blog/the-earth-is-round.html" target="_blank">A one-pager introduction</a></p>
+<p><br />The original article from Jacob Cohen<br /><a href="http://ist-socrates.berkeley.edu/~maccoun/PP279_Cohen1.pdf" target="_blank">The earth is round (p &lt; 0.05)</a><br /><br /></p>
+<p>and some further discussions</p>
+<p><a href="https://www.psychologytoday.com/blog/one-among-many/201104/what-cohen-meant" target="_blank">What Cohen meant - Where good old-fashioned proof beats probability</a></p>
+<p></p>
+<p><a href="https://peerj.com/articles/3544/" target="_blank">The earth is flat (p &gt; 0.05): significance thresholds and the crisis of unreplicable research</a><br /><br /></p><p>In HW3, Part e) bullet two reads: &#34;Fit each of the 3 models on the provided left out test set and calculate R2. Do the results agree with the cross-validation? Why or why not?&#34;</p>
+<p></p>
+<p>Is the intention here to _fit_ the models to the test data (i.e. to find new parameter estimates) or to _predict_ results on the test data (i.e. use the parameter values from training and the data inputs from test to see how close the model comes to the observed number of bike rentals in the test data)?</p><p>Why can answered opinion survey questions be auto-graded as incorrect?</p>
+<p></p>
+<p>I assume these aren&#39;t the real points that are part of our final grade. Though I would mistrust the data you get from this because the quiz lets you correct your answer before final submission and some people seeing their opinion is labeled as incorrect with the correct opinion labeled, will change their answer before final submission deadline. Then again, maybe you wanted that to show some point in a future lesson because we are all lab rats. ;-)  </p>
+<p></p>
+<p>That would be a hidden purpose test</p>
+<p>http://tvtropes.org/pmwiki/pmwiki.php/Main/HiddenPurposeTest</p><p>is the video online around midnight or next day morning? for online student who cannot access lecture/class material the same time as on campus student, to be fair, is it possible to put more thoughts on reconsidering the deadline or late days policy? Thanks</p>
+<p></p>
+<p>For those who works during day time, cannot watch video until night, it is more than 24 hour delays to access the class...... Thanks</p><p>I used statsmodels OLS for my models, and statsmodels summary() method shows positive R^2 that increases as model flexibility increases. I plot the predictions, and they appear more or less as I would expect them to. However, when I use r2_score I get negative numbers. I wrote my own function to calculate r^2, and I get the same numbers that r2_score produces. Anyone see something similar?</p>
+<p></p>
+<table border="1"><tbody><tr style="text-align:right"></tr><tr></tr></tbody><tbody><tr><td>-0.218010</td><td>-0.406636</td><td>-0.474544</td><td>-0.502045</td><td>-0.525500</td></tr><tr><td>-0.178018</td><td>-0.321256</td><td>-0.391808</td><td>-0.490141</td><td>-0.545327</td></tr></tbody></table>
+<p></p>
+<p></p><p>I understand we have subspaces S0 and S1, the predictive matrix X and y0 which we try to map to either S0 or S1. Not sure what the label vector is (I would think this could be solved without that vector)? And if it is necessary, what does it represent?</p><p>Can non-Extension School graduate students (AC209) also watch the live lectures online? If so, how?</p><p>Hi anyone still looking for a partner for hw3?</p><p>I am trying to understand what I need to plot for 1C. The question says: </p>
+<pre>Fit polynomial regression models of degrees 2, 3, 10, 25 and 50 to the training set, and generate visualizations of the fitted models (in the same figure, plot the predicted value from all models as a function of time).</pre>
+<p></p>
+<p>So which one of the following should I plot:</p>
+<p>1. X_test v/s y_test_hat and  X_train v/s y_train_hat</p>
+<p>2. X_test v/s y_test_hat and  X_train v/s y_train</p>
+<p>3. X_test v/s y_test_hat and  X_test v/s y_test</p>
+<p>4. X_train v/s y_train_hat and  X_train v/s y_train</p>
+<p>5. Something else.</p><p>do we look for random residual around zero, which is similar to linear regression? a random pattern suggest a strong polynomial relationship between y and x? Thank</p><p>We collaborated on HW2, for both the standard parts and additional AC209 HW questions. And we worked on one jupyter notebook. The 109 student also participated in solving the AC209 questions. Shall we still submit separately on canvas?</p>
+<p></p>
+<p>If we still should submit separately, would the two almost same answer notebooks cause any concerns?</p>
+<p></p>
+<p>Thank you!</p><p>Instead of approximating CI using standard error, would it be okay to bootstrap, and cut off the tails on each end of the sampling distribution?</p>
+<p></p><p>when will the answer for hw1 be posted? </p>
+<p>Since I had so much trouble in hw1, I would like to know how to do this. </p><p>There seems to be no way to calculate r2 for a test data set on a fitted model in statsmodel.   rsquared only operates on a fitted model and does not accept any parameters like the other libraries do.  </p>
+<p></p>
+<pre>X_train = sm.add_constant(X_train)
+
+model = sm.OLS(y, X_train).fit()
+model.summary()
+model.rsquared
+model.params
+model.conf_int()</pre>
+<p>As was mentioned in another post, r2_score is part of sklearn, not statsmodel.  </p>
+<p></p>
+<p>Is there a way to do this in statsmodel or are we supposed to use both libraries to eval r2 for train and test?</p>
+<p></p><p>In part 1c, we are asked to &#34;generate visualizations of the fitted models (in the same figure, plot the predicted value from all models as a function of time)&#34;. </p>
+<p></p>
+<p>Isn&#39;t the visualization of the fitted model just the predicted value from the model as a function of time? How are these 2 things different?</p><p>On the polynomial section, my training R^2 value for degree 25 is somehow greater than the R^2 for a degree 50 polynomial. I can&#39;t find any bugs in my code. How is this possible? I thought adding additional parameters always improved R^2.</p><p>I&#39;m not quite sure about what to write in this question. What is it asking for? Do we need to write code?</p><p><strong>3. The Effect of Sample Size on Uncertainty</strong></p>
+<p></p>
+<p>has a graph that can mislead one into thinking the effect of sample size on the y-intercept is much larger than the effect on slopes.</p>
+<p><img src="https://d1b10bmlvqabco.cloudfront.net/attach/j6qqcqfmotn3ox/ibbdd5b49211mb/j7zjyvk3bq7g/original.png" alt="" /></p>
+<p>however if you scale the inputs as a ratio of their maximum value</p>
+<pre>for example by changing
+ax.plot(samples, ses[:, 0], color=&#39;teal&#39;, label=&#39;SE of intercept&#39;)
+ax.plot(samples, ses[:, 1], color=&#39;brown&#39;, label=&#39;SE of slope&#39;)</pre>
+<p>to</p>
+<pre>ax.plot(samples, ses[:, 0]/max(ses[:, 0]), color=&#39;teal&#39;, label=&#39;SE of intercept&#39;)
+ax.plot(samples, ses[:, 1]/max(ses[:, 1]), color=&#39;brown&#39;, label=&#39;SE of slope&#39;)</pre>
+<p>the resulting graph will look like this:</p>
+<p><img src="https://d1b10bmlvqabco.cloudfront.net/attach/j6qqcqfmotn3ox/ibbdd5b49211mb/j7zk1vrhi339/ratio_of_max.png" alt="" /></p>
+<p></p>
+<p>Much different impression.<br /><br />P.S. I associated this thread with HW2, Lab 4, Lab 5 because there is no Lecture 4 folder/tag and I couldn&#39;t figure out what else to associate it with.</p><p>I was surprised to see a <a href="http://www.statsmodels.org/stable/generated/statsmodels.regression.linear_model.RegressionResults.html#statsmodels.regression.linear_model.RegressionResults" target="_blank">huge list</a> of statistical metrics in Statsmodel, many of whose definitions included the words mean, or squared or error (and for different kinds of things), but from what I could tell, none of them are this mean squared error  sum((y_fitted - y_actual)^2) / number_of_observations</p>
+<p><br />Did I miss something scanning the statsmodel docs? <br /><br />SKLearn doesn&#39;t appear to have anywhere near the number of statistical metrics as Statsmodel, but it does have a mean_squared_error function.</p><p>I have never tried to use python machine learning APIs in production work. But after working on just two homeworks, which use libraries (pandas and sklearn) which are frequently used (and I presume statsmodel is too), I am surprised at how frequently they are changing APIs with the excuse that putting out deprecation warnings is acceptable to the business world.</p>
+<p></p>
+<p>Can anyone imagine Microsoft, Oracle and IBM announcing something like &#34;we&#39;re going to break a significant amount of the code running your businesses in 3 months. Please change all code like (long list of features) to (long list of not radically different features).&#34;<br /><br />They would be bankrupt in weeks (or days) from all the lawsuits (from shareholders and customer).</p>
+<p></p>
+<p>But that is life, so how to deal with it:<br /><br /></p>
+<p>Since the unit testing, automated acceptance testing, simple design and refactoring rules of eXtreme Programming are not well used (or used at all) in things labeled &#34;agile development&#34;, I have my doubts about the quality and/or development expense efficiency of businesses that use these python tool kits (all with versions &lt; 1.0), as is, in code that is maintained over any significant length of time. If one uses them for production code, I suggest writing an API wrapper over these entire libraries to insulate your code from the too frequent changes in APIs that these library developers are doing.</p><p>In the lab there is this statement:<br /><br /><em>&#34;Besides the beta parameters, </em><em><code>results_sm</code> contains a ton of other potentially useful information. Type <code>results_sm</code> and hit tab to see.&#34;<br /></em><br />I don&#39;t know exactly what &#34;type results_sm and hit tab&#34; mean, but on my Windows browser, I did</p>
+<p></p>
+<p></p>
+<p>print(results_sm.summary()) </p>
+<p></p>
+<p>to get what I believe is that same information.</p><p>is there a way to keep a list/array of results from knn_model.fit? instead different variable to hold model fit results for different k</p><p>If predicted y is plotted as line as required by the hw2, I feel the plot is not as readable as scatter plot, or did I interpret the question wrong? Thanks</p>
+<p></p>
+<p>and we need to plot all k=(1, 2, 10, 25, 50, 100 and 200) in one plot? or we could plot y vs. predicted y for each k in separate plot, and compare them all together? Thanks</p>
+<p></p>
+<p><img src="https://d1b10bmlvqabco.cloudfront.net/attach/j6qqcqfmotn3ox/ixaq1vw5c1L/j7yx6orjroto/qa.JPG" alt="" /></p>
+<p></p><p>trained_model=knn_model.fit(x_train, y_train)</p>
+<p>trained_model.score(x_train,y_train)</p>
+<p></p>
+<p>does ....score produce r^2?  the web I got is vague about what it is. Thanks</p><p>I was going through the solutions of Lab3 and noticed that while plotting the graph a reshape function has been used to reshape the x- axis array to (400,1). </p>
+<p></p>
+<p>xfit = np.arange(0,4,.01).reshape(len(np.arange(0,4,.01)),1)</p>
+<p></p>
+<p>Why do we do that? I mean, even if we don&#39;t use reshape, it plots the graph in the same fashion.</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p><p>I am currently working through part a and I am confused why we are trying to find a r^2 value and not MSE for the KNN regression. The KNN example we worked through in class looked at MSE and I thought r^2 was mostly used for linear regression? </p><p>For part (b), I just wanted to clarify whether &#39;r2_score&#39; function is part of the statsmodel package.? It doesn&#39;t seem be belong to the OLS instance or results instance.</p><p>For Part 4, How do we plot the multiple linear regression?</p>
+<p></p>
+<p>For Part 3, can we define x_train as x_train = traindf.wt instead of x_train = traindf[[&#39;wt&#39;]]??</p>Apparently you can collaborate with multiple users on one Jupyter notebook using JupyterHub. I think this would be great for working through a problem set together. However I don&#39;t have root permissions on any Linux machine to set this for myself. Could the instructors please look into allowing us to add users to our JupyterHub instances? Or suggest who else I could ask for help?Is anyone looking for a 109 partner?Anybody in 209 looking for a partner?<p>I just wanted to double-check that one group homework submission in enough and we don&#39;t have to also submit the homeworks individually.</p>
+<p></p>
+<p>Under my Canvas Assignment section my HW1 is listed under &#34;Overdue&#34; and under my Grades section I see status as &#34;MISSING&#34;.  This is making me nervous.  Thanks.</p><p>Can someone point me to where can I find this file (referenced in Lecture 4 notebook)?</p><p>Hi - I just realized our code commenting/documentation cuts off on the PDF&#39;d version because the lines were too long and go outside the view of the cell, &amp; we forgot to break them.  Can I add a comment on our group submission to read these comments in the notebook itself?  We submitted before the deadline so I don&#39;t want to re-submit and take a late day for it.</p>
+<p></p>
+<p>Thanks!</p><p>This issue happened with HW1 submission where last page which mostly contains Conclusions didn&#39;t appear in pdf. </p>
+<p></p>
+<p>The python jupyter notebook contains all the pages including the students&#39;s answer.</p>
+<p></p>
+<p>Please advise.</p><p>When I produce the urlcache, I get 1 bad request.</p>
+<p>Is there an easy way to debug this?</p>
+<p>How do I identify which link is causing the problem.</p>
+<p>I&#39;m assuming it&#39;s because there is a value that doesn&#39;t have a link.</p>
+<p>Will the &#34;None&#34; that replaced nonexisting urls affect our results?</p>
+<p></p>
+<p>Can I ignore it and move on to the next problems?</p><p>I noticed that the train sample size is n=250 and test sample is n=1000. My understanding is that we are using the &#39;train&#39; to build models and &#39;test&#39; to test them so to me the proportion seems a bit off. Maybe I am missing something? </p><p>I stored ya as object, it is in the format like &#39;1999-present&#39;</p>
+<p>when I get first 4 letter in the string, which is 1999, and perform str.isdigit, it will report warning and does not return true/false. I suspect it might not treat it as string, so the str.isdigit fail, any suggestions? Thakns</p>
+<p></p>
+<div>
+<div>
+<pre>C:\Users\X202608\AppData\Local\Continuum\Anaconda3\lib\site-packages\ipykernel_launcher.py:20: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: <a target="_blank" href="http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy">http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy</a>
+C:\Users\X202608\AppData\Local\Continuum\Anaconda3\lib\site-packages\ipykernel_launcher.py:32: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: <a target="_blank" href="http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy">http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy</a>
+</pre>
+</div>
+</div>
+<div>
+<div>Out[350]:</div>
+<div>
+<pre>&lt;function str.isdigit&gt;</pre>
+</div>
+</div><p>Would like to make some edits to our assignment but we&#39;ve already uploaded it to canvas, is it ok to re-submit prior to the deadline?</p><p>Hi, the two datasets under HW2 have some problems. Could the teaching team re-upload them maybe? Thanks!</p><p>Hello,</p>
+<div></div>
+<div>I&#39;m trying to submit my HW1 in a pair but can only see HW2 groups in my Canvas. How should I proceed?</div>
+<div></div>
+<div>Thank you!</div><p>I try to find tag &#34;tr&#34; with text &#39;Years active&#39;, I tried many different ways based on google search, but always return null, how could make it work, stuck here for many hours </p>
+<p></p>
+<p>pattern = re.compile(&#39;Years active&#39;)<br />rows_ya=table_YearEnd_HotSingles[0].find_all(&#34;tr&#34;,text=pattern)</p>
+<p></p>
+<p>and </p>
+<p></p>
+<p>pattern.match(rows_ya[5].text , also failed</p>
+<p></p>
+<p>rows_ya[5].text is </p>
+<pre>&#39;\nYears active\n1985–present\n&#39;</pre><p>if use dict(result2), I could see url, if use list(result2), I could only see the ranking_sum, is there a way to retrieve the pair, url and the corresponding ranking_sum? Thanks</p><p>after load cached url into soup, and try to load the sidebar by this:</p>
+<p>table_YearEnd_HotSingles=soup.find_all(&#34;table&#34;,class_=&#34;infobox vcard&#34;) </p>
+<p>or table_YearEnd_HotSingles=soup.find_all(&#34;table&#34;,class_=&#39;infobox vcard&#39;)</p>
+<p></p>
+<p>it return empty table_YearEnd_HotSingles, I think we should use infobox vcard  to find the location of sidebar? Thanks</p>
+<p></p>
+<p>ok, or table_YearEnd_HotSingles=soup.find_all(&#34;table&#34;,class_=&#39;infobox&#39;)</p>
+<p>works. somehow confusing.</p><p>if a singer has been ranked serveral years, then picked the highest/earliest one to calculate the value? Thanks</p><p>I created a separate dataframe, with singer url as key, and try to get value from flathdatafram which have sum of ranking and cnt. I see results with repeated value (not distinct), any advice? Thanks</p>
+<p></p>
+<p>cols_wanted=[&#39;band_singer_url&#39;,&#39;cnt&#39;]<br />flatframe.merge(flatframeKey, left_on=&#34;band_singer_url&#34;, right_on=&#34;band_singer_url&#34;,how=&#39;inner&#39;)[cols_wanted]</p><p>the spec for creating largedf in 2.2 includes the song and songurl columns despite the following problems</p>
+<ul><li>in the case of multiple singers for a single with multiple songs, there is a reasonably high chance that one or more of the multiple singers did not perform on all songs in that single&#39;s list.</li><li>songulrs is never used (and song title isn&#39;t needed either) in this or subsequent problems (the world already has voluminous vestigial code costing businesses money to build and avoid when maintaining/debugging real problems)</li><li>it is nontrivial to make sure which songs match which urls when songs may not have a url (i.e. functional dependencies between columns are not preserved by flatframe lumping everything into one dataframe with multiple multi-valued columns)</li></ul>
+<p></p>
+<p>I&#39;d like to omit the songurl and song if that is accepted for this homework.</p>
+<p></p>
+<p>If that is not OK, then although the spec for largedf does not explicitly handle the multi-song case, I&#39;d like to put all songs and songurls in lists (even if the list is just one item or the songurl is 0 items) and ignore the possible problems that song/songurl matching is not 100% guaranteed and ignore the fact that I don&#39;t really know from this data if the musician(s) played on all songs.</p>when running the following prewritten cell...
+
+# DO NOT RERUN THIS CELL WHEN SUBMITTING
+# Here we are populating the url cache
+# subsequent calls to this cell should be very fast, since Python won&#39;t
+# need to fetch the page from the web server.
+# NOTE this function will take quite some time to run (about 30 mins for me), since we sleep 1 second before
+# making a request. If you run it again it will be almost instantaneous, save requests that might have failed
+# (you will need to run it again if requests fail..see cell below for how to test this)
+flatframe[&#34;url&#34;].apply(get_page)
+
+i get the following error. TypeError: unhashable type: &#39;list&#39;
+my urls for each artist are in a list, as they appear in the earlier, given, example. I get this is not hashable bc it is a list, a mutable data type, though i do not know how to get past this. i tried converting the whole column to tuples, but this is obviously wrong since the result is something like this (/, w, i, k, i, p, e, d, i, a, etc....<p>Does anyone have issues in their DataFrame in which the urls are enclosed by brackets?</p>
+<p>My dictionaries look identical to the examples, but all my urls have brackets in my dataframe.</p>
+<p></p>
+<p>I tried to remove the brackets using regular expression operators, but I don&#39;t see any change.</p>
+<p>I tried to convert each items in the url column to strings using the join function, and it will give me NAs.</p>
+<p>The data type Is list and the items in the list are strings. </p>
+<p>ex)</p>
+<p>urls</p>
+<p>-------</p>
+<p>[/wiki/nameof artist, /wiki/nameofartist2]</p>
+<p>[/wiki/nameofartist3]</p>
+<p></p><p>is there I could find some example of using urlcache? i tried to plugin some url address, but seems not working. Thanks</p>
+<p></p>
+<p>I&#39;ve already have json file and could load into urlcache,. Thanks</p><p>which kind of datatype result is? how could I retrieve band list from below result_df? it seems it is indexed by &#39;band_single_url&#39;, and just dump 20 items...</p>
+<p></p>
+<p>I need the band list for bar chart....... Thanks</p>
+<p></p>
+<p>result = flatframe[&#39;band_singer_url&#39;].value_counts()</p>
+<p>list_temp=result[:20]<br />result_df=pd.DataFrame(list_temp)<br />result_df[&#39;band_singer_url&#39;]</p>
+<p></p>
+<p></p>
+<p></p><p>when we bar plot, can we do top 20 as the same in q1.6? q1.5 did not name how many top artist to select. thanks</p><p>I used below command, but it does&#39;t rank based on the score</p>
+<p></p>
+<p>flatframe.groupby(by=[&#39;band_singer_url&#39;])[&#39;ranking_sum&#39;].sum().rank(ascending=False)</p>
+<p></p>
+<p></p><p>From 2.1:</p>
+<p><br /><em>Also note that some of the genres urls might require a bit of care and special handling.</em></p>
+<p><em></em></p>
+<p>What is &#34;genres urls&#34;?</p><p>Hello,</p>
+<p></p>
+<p>I&#39;m trying everything to take a string and find urls in it and place them in a second list of strings, but this seemingly simple operation is frustrating. I&#39;m 100% certain there&#39;s an easier way to do this than what I&#39;ve got here, because were that not the case, no one would use Python, ever.</p>
+<p></p>
+<p>Here&#39;s what I&#39;ve got - thanks for your help!</p>
+<p></p>
+<p>for each_row in t.find_all(&#39;tr&#39;):<br /> links = each_row<br /> rank = links.find(&#39;th&#39;).text<br /> ttl = links.find(&#39;th&#39;).next_sibling.next_sibling.text<br /> artist = links.find(&#39;th&#39;).next_sibling.next_sibling.next_sibling.next_sibling.text<br /> link = links.find(&#39;th&#39;).next_sibling.next_sibling.next_sibling.next_sibling<br /> Songs.append({&#39;ranking&#39;: rank, &#39;band_singer&#39;: artist, &#39;title&#39;: ttl, &#39;url&#39;: link, &#39;year&#39;: year})</p>
+<p></p>
+<p>#This is where I build my search parameters</p>
+<p></p>
+<p>test_start = 0<br /> test_end = 0</p>
+<p>find_string = &#39;href=&#39;</p>
+<p></p>
+<p>#I initialize a list of links</p>
+<p></p>
+<p>link_list = []<br /> link_list_length = 0</p>
+<p></p>
+<p>#Loop through the length of the line that contains the links</p>
+<p>for p in range(0, len(link)):</p>
+<p></p>
+<p>#Find the first instance of the search string, href=</p>
+<p>test_start = str(link).find(find_string, p)</p>
+<p></p>
+<p>#If found... now find the end by looking for a closing quote</p>
+<p>if (test_start &gt; -1):<br /> test_end = str(link).find(&#39;&#34;&#39;, test_start &#43; 6)</p>
+<p></p>
+<p>#Set intermediate_string = to the link. This is where the error occurs - the message is</p>
+<p>#TypeError: Unhashable type &#39;slice&#39;<br /> intermediate_string = str(link[test_start&#43;5 : test_end])</p>
+<p></p>
+<p>#And this is where I try to add it to a list of links, &#34;link_list&#34;<br /> link_list[link_list_length] = intermediate_string<br /> link_list_length = link_list_length &#43; 1</p>
+<p></p>
+<p>#I don&#39;t want my loop re-covering already analyzed text, so I change p before the</p>
+<p>#next iteration.<br /> p = test_end &#43; 1</p><p>what is page_text for? Can&#39;t we just use the url to extract page_text?</p>
+<p></p>
+<p>yes, it takes time, and json file is about 149MB, is so big within expectation? Thanks</p><p>is this the call that time consuming? the first one that fetch 20&#43;year 100 top singer info doesn&#39;t take much time, several sec.</p>
+<p></p>
+<p>I run this:</p>
+<p>get_page as show in title, no results come out. I am not sure if I ran the function right or not. The json file is also empty. or not created.</p>
+<p></p>
+<p></p>
+<p>is there anything run on my side? Thanks</p><p>it will take the year info to lookup text corresponding to the year input, or we have flexibility over this part? Thanks</p>
+<p>is it ok return a dataframe instead of list of dict? thanks</p><p>tried df[&#34;song&#34;].strip(&#39;\&#39;&#39;)</p>
+<p>or df[:song&#34;].replace(&#39;&#34;&#39;,&#39;&#39;)</p>
+<p></p>
+<p>both not working, any suggestions? Thanks</p><p>I realize coordinating multiple software platforms (Canvas, Piazza, Harvard&#39;s internal systems) and whatever published info there is, is hard. <br /><br />However, the current state is:</p>
+<p></p>
+<p>I have no contact info/way to communicate 1 on 1 for almost anyone commenting in this forum, the vast majority of DCE students, and everyone else in this class, nor even the names of the vast majority of participants.</p>
+<p></p>
+<p>I have been arbitrarily assigned to some group of 10 students, only 1 have I previously corresponded with. Not all of the faculty/TA&#39;s are in that group system (notable omissions include Dave Rahul and Margo Levine). I have no idea what that small group does other than restrict contact info. Piazza messages include no link to a profile page of the poster (and a large % of postings are anonymous, which isn&#39;t necessarily bad, but in thise case it adds to the current contact problem). At this point my best hope is to highlight a name when it shows up in piazza, right click to search Google, and then wonder if Google&#39;s &#34;I feel lucky&#34; algorithms are good enough. Though I hope there are no John Smiths I want to contact. ;-)<br /><br />I&#39;m not sure if this is viewable by class members, but here is my canvas profile including contact info:<br />https://canvas.harvard.edu/about/163876</p>
+<p></p>
+<p></p><p>when there are one song has two artist, and corresponding two url, it will fail when do grouping, should we add one extra empty url for all songs, so the one with two artist url wont&#39; fail? any suggestions? Thanks</p>I found a typo in the section on linear models.
+In the matrix algebra Recap there a 2 missing in the formula:
+$\frac{\partial}{\partial x}[(b-Ax)^T(b-Ax)]= -2A^T(b-Ax)$
+as it&#39;s a useful formula I thought it would be worth pointing out.<p>Is it possible to change our team for the next assignment? Or is our current team fixed for every future assignment? Thank you.</p><p>Should each person submit both files separately on the assignments tab after they have joined a group? Or, does only one member of the group need to submit?</p><p>I ran into a weird issue with my code when I was trying to strip some leading/trailing spaces off some strings that were stored in a list.</p>
+<p></p>
+<p>When I wrote this:</p>
+<p><em>for name in text_extracted:</em></p>
+<p><em>    name = name.strip()</em></p>
+<p><em>return text_extracted</em></p>
+<p>it didn&#39;t affect anything in my text_extracted list (ie, the trailing spaces were still there)</p>
+<p></p>
+<p>I got it to work by creating a new list and filling it with the stripped strings:</p>
+<p><em>text_fix = []</em><br /><em>for name in text_extracted:</em><br /><em>     new_name = name.strip()</em><br /><em>     text_fix.append(new_name)</em><br /><em> return text_fix</em></p>
+<p></p>
+<p>But this fix seems ugly, and I don&#39;t understand why my first code didn&#39;t work. Am I missing something about how variable assignments work in Python?</p>
+<p></p>
+<p>Thank you!</p><p>I am able to extract url of href tag..but it is relative link (e.g. /wiki/Bridge_over_Troubled_Water_(song).)... how to get complete url..for the title song.?</p>
+<p>(i.e. https://en.wikipedia.org/wiki/Bridge_over_Troubled_Water_(song))</p>
+<p>Any advice or hints.</p>
+<p></p>
+<p>Thanks</p>
+<p>Aditya</p><p><img src="https://d1b10bmlvqabco.cloudfront.net/attach/j6qqcqfmotn3ox/isvtqh4sv252tc/j7pktwa5z9aw/HW1SC3.png" alt="screenshot" />by looking at the screenshot provided for the born column I noticed that the value there is False for all examples. what type of value are we supposed to use in this column? this is a little confusing because i expect to put the singer bday in here</p><p>by using soup, I could get rank, song, band, but I didn&#39;t get url right, any advice on what tag to set to get url also ?</p>
+<p></p>
+<p>I used below code to breakdown the html, somehow it ignore the url part</p>
+<p></p>
+<p>songs=[]</p>
+<p>for row in rows[1:]:<br />    for value in row.find_all(&#34;td&#34;):<br />        songs.append(value.get_text())</p><p>I have below warning when call BeautifulSoup, is there a way to disable it ? Thanks</p>
+<p> this is the code:</p>
+<p></p>
+<p>url=&#34;<a href="https://en.wikipedia.org/wiki/Billboard_Year-End_Hot_100_singles_of_1970">https://en.wikipedia.org/wiki/Billboard_Year-End_Hot_100_singles_of_1970</a>&#34;<br />r=requests.get(url)<br />data=r.text<br />soup=BeautifulSoup(data)</p>
+<p></p>
+<p>below is the warning</p>
+<p></p>
+<p>C:\Anaconda3\lib\site-packages\bs4\__init__.py:181: UserWarning: No parser was explicitly specified, so I&#39;m using the best available HTML parser for this system (&#34;lxml&#34;). This usually isn&#39;t a problem, but if you run this code on another system, or in a different virtual environment, it may use a different parser and behave differently.<br /><br />The code that caused this warning is on line 193 of the file C:\Anaconda3\lib\runpy.py. To get rid of this warning, change code that looks like this:<br /><br /> BeautifulSoup(YOUR_MARKUP})<br /><br />to this:<br /><br /> BeautifulSoup(YOUR_MARKUP, &#34;lxml&#34;)<br /><br />  markup_type=markup_type))</p><p>Hi,</p>
+<p></p>
+<p>I am in the extension school version of the class and wanted to pair with someone from SEAS version.  Is that allowed/possible through Canvas?</p>
+<p></p>
+<p>Thanks.</p><p>From Section 1.4: <br /><em>Notice how, above, the dataframe is ordered by ranking and then year. While the exact order is up to you, note that you will have to come up with a scheme to order the information.<br /><br /><br /></em>The point of dataframes is to mimic as closely as possible, relations (in RDMS), where order of columns and order of rows in table storage are irrelevant. You reference columns by names and get rows by searching for values in the rows. Otherwise we would use arrays where column order and row order essential.<br /><br />So I don&#39;t understand why the homework says that we have to come up with a scheme to order the information. I don&#39;t see why the homework that specifies<em> a dataframe</em> should care what order the rows are stored in, or which order the column names are stored in.<br /><br />My guess is the original text was ambiguously worded in an attempt to address a different idea (e.g. don&#39;t mix up data so that you show the wrong singer for the wrong song or ranking or year, etc).<br /><br />Please confirm</p><p>If yearinfo is supposed to be a dict with years as the keys and the corresponding list of dicts as the values, is there a simple way to read the JSON file into a data frame? Something like pd.read_json(), which currently reads the years as the columns headers and the list of dicts as the entries</p><p>Anyone have any tips? Going into the dictionary of lists of dictionaries and pulling out data is not working how I thought it would be. </p><p>I&#39;m copying and pasting from Spyder into Jupiter. I got the feeling y&#39;all are watching out for people copying and pasting but I prefer to work in multiple windows and don&#39;t love jupiter. </p><p></p>
+<p>NVM: I had to create yearinfo as a dictionary with keys of years and values as output of parse_year. I also had to create a &#34;data&#34; folder in my working directory -&gt; this should have been in the instructions.</p><p>Part 1.1 and 1.2 has following output for yearstext</p>
+<p></p>
+<p>[{&#39;band_singer&#39;: &#39;The Guess Who&#39;,<br />  &#39;ranking&#39;: 3,<br />  &#39;title&#39;: &#39;&#34;American Woman&#34;&#39;,<br />  &#39;url&#39;: &#39;/wiki/The_Guess_Who&#39;},<br /> {&#39;band_singer&#39;: &#39;B.J. Thomas&#39;,<br />  &#39;ranking&#39;: 4,<br />  &#39;title&#39;: &#39;&#34;Raindrops Keep Fallin\&#39; on My Head&#34;&#39;,<br />  &#39;url&#39;: &#39;/wiki/B.J._Thomas&#39;}]</p>
+<p></p>
+<p>Part 1.3 : parse_year uses yearstext as an input</p>
+<p>It seems like using yearstext as an input to the function parse_year is limiting since yearstext  doesn&#39;t contain all the data required  for the function parse_year  based on HW restrictions.</p>
+<p></p>
+<p>Is there something that I am misunderstanding?</p>
+<p></p><p>Hey All,</p>
+<p></p>
+<p>Which attribute are we using to fetch all the track listings for a particular single. I don&#39;t seem to able to fetch the complete listings. I found out that the class is &#39;mw-headline&#39; and the id is &#39;Track_listings&#39;, but I&#39;m not able to parse through the lists of songs.</p>
+<p></p>
+<p>Need help urgently :)</p>
+<p></p><p>Hey all,</p>
+<p></p>
+<p>According to the hw, we should be able to successfully follow all the urls (and the sum above 2.1 should be 0). However, there is a song in 1997 that is performed by &#34;Various Artists&#34; which has no wikipedia link, so it will always fail. Should we take care of this by passing a dummy link? Or can we edit get_pages, or is it ok to have the sum be 1?</p><p>If we find a helpful block of code towards our homework from StackOverflow or a similar site (e.g. to help construct a specific type of DataFrame), would we be allowed to source this code for our homework and cite the link? Thanks!</p><p>I don&#39;t understand both  the meaning and purpose of the second dictionary input  &#34;yeartext_dict&#34;. If we just provide the year, shouldn&#39;t we able to get all the information that we need?</p>
+<p></p>
+<p>Function<br />--------<br />parse_year</p>
+<p>Inputs<br />------<br />the_year: the year you want the singles for<br />yeartext_dict: a dictionary with keys as integer years and values the downloaded web pages  from wikipedia for that year.</p>As mentioned in 1.4 HW1, each row of the frame should represent a song with it the chief properties of year, song, singer, and ranking. May i ask what if the case for song with two singers? Do I need to keep the first singer or just split into two rows.
+
+I guess we should keep the first singer according to the example &#xff08;1997 Something about the way you look tonight, only takes the first song name). But if we just keep the first singer, the counting of prolific singers might be not accurate enough. 
+
+Is there anyone can answer me ? ~~~<p>This is a real walk down the memory lane - I am blasting Ace of Base today!</p>I sometimes wonder if data science degree programs shouldn&#39;t require a class in social psychology...
+
+https://www.mediapost.com/publications/article/307394/thats-funny-you-dont-look-anti-semitic-propubl.html<p>It would be very helpful if the solution to sections could be provided.</p><p></p><pre>/opt/anaconda3/lib/python3.6/site-packages/matplotlib/font_manager.py:1297: UserWarning: findfont: Font family [&#39;sans-serif&#39;] not found. Falling back to DejaVu Sans
+  (prop.get_family(), self.defaultFamily[fontext]))</pre>I&#39;m not sure why this function&#39;s prototype uses the entire set of webpages as the second parameter (yeartext_dict) when only the webpage for the year referenced by 1st parameter is actually accessed by this function.<p>In case if I do not find team mate to work with ...is there going to be problem for further homeworks or classes?</p>For a given book, the list of genres is often redundant. 
+
+This is typically what happens when people store data in a &#34;cool structure&#34; instead of in a well-defined, easily understood (i.e. boring) RDBMS.
+
+If you want to store the genre data in a boring yet robust normalized relational database, but do it in a &#34;cool, new&#34; way, here is one way:
+<pre>Insert Into BookGenre
+Execute sp_execute_external_script &#64;language=N&#39;Python&#39;,
+	&#64;input_data_1=N&#39;Select Dir,Genre_URLs From Books&#39;,
+	&#64;script =N&#39;
+import pandas as pd
+outputlist = []
+for tuple in InputDataSet.itertuples():
+    if tuple[2]!=None:
+        for element in set(tuple[2].split(&#39;&#39;|&#39;&#39;)):
+            outputlist.append((tuple[1],element[8:]))
+OutputDataSet=pd.DataFrame(outputlist)&#39;</pre>
+The python &#34;library&#34; being used here is SQL Server 2017. ;-)
+That being said, it is still much simpler (and MUCH faster) to do this in native SQL:
+<pre>Insert Into BookGenre
+Select Distinct Dir,SubString(value,9,Len(value)-8)
+    From Books Cross Apply string_split(Genre_URLs,&#39;|&#39;) </pre><p>Are we meant to alter get_page to deal with the case when there are multiple artists (i.e. the &#34;url&#34; columns is actually multiple urls)? Right now I&#39;m getting a lot of bad requests, presumably because the urls of multiple artists for the one song were concatenated </p><p></p>
+<p>In the L4 excercise, Part 3 where we were asked to get the author name from the author url, I used the following piece of code -</p>
+<pre>(author_url.split(&#39;/&#39;)[-1].split(&#39;.&#39;)[1:])</pre>
+<p>Which was returning the correct output but as a list. Like this- </p>
+<pre>[ &#39;Suzzane_Collins&#39; ]</pre>
+<p></p>
+<p>Now, I wanted to remove the underscore in the name. Since the name was as a list, I couldn&#39;t use the replace funtion.</p>
+<p style="text-align:left"></p>
+<p>I then used the .join() function as written in the problem solution. The O/P of this statement was a string where I could replace the _ signs as well. So this seemed pretty neat.</p>
+<p></p>
+<p>Something like this-</p>
+<pre>&#34;.&#34;.join(author_url.split(&#39;/&#39;)[-1].split(&#39;.&#39;)[1:]).replace(&#34;_&#34;,&#34; &#34;)
+ &#39; Suzzane Collins&#39;</pre>
+<p></p>
+<p>My question is - is the .join() funtion here only used to convert the O/P into a string or is there any other relevance to it? </p>
+<p></p><p>How should we share our pset code with our partner? I was going to just share a public git repository with my partner, but then I noticed that the README says not to make the homework public. Will we just have to email the file back and forth?</p><p>It is my understanding that parse_year produces a list of dictionaries for a given year, what exactly are we storing in yearinfo that goes in the JSON file? is the JSON file just one year&#39;s worth of data or a dictionary with years as keys and their respective lists of dictionaries (parse_year output) as values?</p><p>Some bands/singers don&#39;t have a URL (e.g. 1997, Rank 66, band &#34;40 Thevz&#34;). In this case, should we omit 40 Thevz from band_singer so that the length of url and the length of band_singer is the same?</p><p>In HW1 the desired output appears inconsistent. In a few places the output titletext has spaces between the double quotes and the title, as shown below.</p>
+<p></p>
+<pre><code>{&#39;band_singer&#39;: [&#39;Jewel&#39;],
+  &#39;ranking&#39;: 2,
+  &#39;song&#39;: [&#39;Foolish Games&#39;, &#39;You Were Meant for Me&#39;],
+  &#39;songurl&#39;: [&#39;/wiki/Foolish_Games&#39;,
+   &#39;/wiki/You_Were_Meant_for_Me_(Jewel_song)&#39;],
+  &#39;titletext&#39;: &#39;&#34; Foolish Games &#34; / &#34; You Were Meant for Me &#34;&#39;,
+  &#39;url&#39;: [&#39;/wiki/Jewel_(singer)&#39;]}</code></pre>
+<p>Whereas in other places there is no space between the double quotes and the titles:</p>
+<pre><code>{&#39;band_singer&#39;: [u&#39;Nu Flavor&#39;],
+  &#39;ranking&#39;: 91,
+  &#39;song&#39;: [u&#39;Heaven&#39;],
+  &#39;songurl&#39;: [None],
+  &#39;titletext&#39;: u&#39;&#34;Heaven&#34;&#39;,
+  &#39;url&#39;: [u&#39;/wiki/Nu_Flavor&#39;]}</code></pre>
+<p>Are either of these outputs more correct?</p><p>Has the location for today&#39;s 4pm section been determined yet?</p><p>I know that graduate students need to attend at least one of the A-sections. How about the regular section?</p><p>In HW1 Q2, the definition for when to store &#34;Years active&#34; value in variable ya is very vague, which causes some confusion for whether we should store ya for singers or not.</p>
+<p>There are at least 2 ways for interpreting the question description &#34;If the text &#34;Years active&#34; is found, but no &#34;born&#34;, assume a band. Store into the variable <code>ya</code> the value of the next table cell corresponding to this, or <code>False </code>if the text is not found.&#34;:</p>
+<p>1. The first way is to store ya only for bands, i.e., only when &#34;Years active&#34; is found AND &#34;Born&#34; is not found; otherwise, set ya to False (including for all singers, whose &#34;Years active&#34; can be found sometimes). If we interpret it this way, all the following questions will work smoothly.</p>
+<p>2. The second way is to store ya as long as &#34;Years active&#34; is found. If this is the case, there would be some issue when solving Q2.4, which requires the distinguishing of bands from singers. One might think a possible solution is to assume a record to be a band when &#34;Years active&#34; is found and extracted AND &#34;born&#34; is False; but there are some corner cases where we can misread a singer as a band (For example, <a href="https://en.wikipedia.org/wiki/Taio_Cruz">https://en.wikipedia.org/wiki/Taio_Cruz</a> is clearly a record for a singer, where the text &#34;Born&#34; and &#34;Years active&#34; can both be found but there is no bday available; if we use the aforementioned criteria, we would mistakenly regard it as a band). Thus it doesn&#39;t make sense for us to store only the url, born and ya in this dictionary (instead we should store another variable is_singer for Q2.4), if we interpret in this way (i.e., to store ya as long as &#34;Years active&#34; is found).</p>
+<p>I think we should use the first version of interpretation, but more clarification is appreciated.</p><p>I went to Nathaniel&#39;s section this afternoon but there wasn&#39;t room for everyone to fit; will the video go online somewhere for FAS students to view?</p><p>I am confused. I got an email saying there would be a new piazza channel and all others associated with this class (I assume it means this set of messages) would be closed.</p>
+<p></p>
+<p>Have I got that right, and if so, why? <br /><br />Or at the very least, I do not want to lose the ability to read the messages in this forum.</p><p>I felt the Monty Hall program in ProgrammingStyle.ipynb could be significantly optimized for various software engineering principles while also generalizing it to n doors/roads. In the process, only 1 function needed to be written.</p>
+<pre>
+import numpy as np<br />def road_not_taken(roads_taken,roads):
+    assert roads&gt;=3,&#34;The Monty Hall Problem needs at least 3 doors (roads) to chose from&#34;
+
+    # strategy: generate random answers until all array elements are new
+    # choosen roads start with 1 because first choice (0) was taken at the beginning
+    # this code relies fundamentally on boolean (masked) indexed numpy arrays
+
+    potential_roads = np.random.randint(1, roads, roads_taken.size)
+    while True:
+        already_taken = (potential_roads == roads_taken)  
+        if not already_taken.any():
+            return potential_roads
+        potential_roads[already_taken] = np.random.randint(1, roads, already_taken.sum())
+simulations = 10000
+doors = 3
+# In arrays, 0 door means door contestant originally chose. All other doors are numbered from 1 to doors-1.
+
+prize_doors = np.random.randint(0, doors, simulations)
+print(&#34;Win percentage when keeping original door&#34;)
+print(100 * (prize_doors == np.zeros(simulations, dtype=np.int)).mean())
+
+goat_doors = road_not_taken(prize_doors,doors)
+switched_doors = road_not_taken(goat_doors,doors)
+
+print(&#34;Win percentage when switching doors&#34;)
+print(100 * (prize_doors == switched_doors).mean())</pre><p>I ran the following code:</p>
+<p></p>
+<p>def f(a, b, c=5, *tupleargs, **dictargs):<br />          print(&#34;got&#34;, a, b, c, tupleargs, dictargs)<br />          return a<br />print(f(1,3))<br />print(f(1, 3, c=4, d=1, e=3))<br />print(f(1, 3, 4, d=1, e=3))<br />print(f(1, 3, 9, 11, d=1, e=3)) # try calling with c = 9 to see what happens!<br />print(f(1, 3, c=9 ))<br />print(f(1, 3, c=9, d=1, e=3))<br />print(f(1, 3, c=9, 11))</p>
+<p></p>
+<p>I can&#39;t understand why the only last argument returns Error. </p>
+<p></p><p>In Lecture1_notebook.ipynb, the last cell plots the histogram as follows:</p>
+<p></p>
+<pre>plt.hist(logduration_casual.dropna()&#43;1, alpha=.5)<br />plt.hist(logduration_registered.dropna()&#43;1, alpha=.5)</pre>
+<p>What does logduration indicate? The variable names are duration_casual and duration_registered. I observed the following:</p>
+<p>1. Running code like this gives error as the variable isn&#39;t defined.</p>
+<p>2. Taking log of duration_casual.dropna() gives an error</p>
+<p>3. Plotting the histogram with duration_casual and duration_registered variables gives a different figure.</p><p>I was unable to get Anaconda to properly work on Windows 10 no matter what I did. To circumvent this I set up a virtual machine running the ubuntu operating system on my computer (use the program virutal box and get the operating system startup disk from <a href="https://www.ubuntu.com/download/desktop">https://www.ubuntu.com/download/desktop</a>) and installed Anaconda on that.</p><p>For Q1.4 in HW1, what should the dataframe display when there are 1&#43; singles per year per rank or 1&#43;singers. Should 1 single be split into 3 rows if there are 3 artists for the single?</p><p>Hi everyone,</p>
+<p></p>
+<p>I had three quick questions relating to the json storing.</p>
+<p></p>
+<p>The first is: should we create a .txt file and simply rename it as &#39;data/yearinfo.json&#39; since this file needs to exist in our directory to actually open it?</p>
+<p></p>
+<p>The second is: when we .dump(yearinfo,fd), is the yearinfo variable a dictionary containing years as keys and values corresponding to the return of parse_year?</p>
+<p></p>
+<p>The third is: in the parse_year function documentation one of the expectations is to set song to titletext stripped of its double quotes when the song doesn&#39;t have a url link ( i think they said we should check the 24th song but I&#39;m guessing they meant the 84th?). Does titletext.strip(&#39; &#34; &#39;) strip the double quotes?</p><p>Hello CD109a,</p>
+<p></p>
+<p>I am having trouble understanding the wording of Q3 in HW0.</p>
+<p></p>
+<p>&#34;Using the sample sizes from the <code>sample_sizes</code> array below, compute a set of sample_means for each sample size, and for 200 replications.</p>
+<p></p>
+<p>sample_sizes = np.arange(1,1001,1)&#34;</p>
+<p></p>
+<p>Do you mean for us to take a random subsample of size 10, from the array sample_sizes=[1..1000], and then calculate mean for 200 subsamples?</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p><p>I was planning to use JupyterHub to complete HW0 but was not able to upload or create a new notebook. Completed the HW on my local installation of Jupyter. Not sure if I was doing something wrong. Anyone else faced the issue? Error screenshot below:</p>
+<p></p>
+<p><img src="https://d1b10bmlvqabco.cloudfront.net/attach/j6qqcqfmotn3ox/j77m3efwvqh/j7c01ho2wkj/error_creating_a_new_notebook_in_JupyterHub.JPG" alt="Screenshot" /></p>Anybody else get Google&#39;s foo.bar challenge while doing lab0?<p>I thought there is supposed to be a quiz posted today since the lecture 2 video is up. Will it be posted soon? I checked the &#34;Quizzes&#34; section in Canvas but didn&#39;t see anything new so wanted to check. Thanks!</p><p>I&#39;m wondering if any of the advanced sessions will be livestreamed, or at least made available by video. I know that it&#39;s only required for 209 students, but I would still really like the opportunity to learn the material.</p><p>This is not really a hw1 question. So can we put lab or misc as an additional folder here?<br /><br />Tracking an additional state variable (count) is unnecessary if you redefine the internal check to only look for non-primes (i.e. final check does not look for N, but instead N-1). <br /><br />If this check finds no non-primes, you have a prime.</p>
+<p>This strategy takes 7 lines of code with 3 of them return statements and 2 are if tests.</p><p>I found this link helpful. <a href="http://matplotlib.org/1.5.0/users/pyplot_tutorial.html#logarithmic-and-other-nonlinear-axis">http://matplotlib.org/1.5.0/users/pyplot_tutorial.html#logarithmic-and-other-nonlinear-axis</a> </p><p>Hello,</p>
+<p></p>
+<p>When I try to watch the online lectures, I get the following error. Anyone else also encountering the same issue?</p>
+<p></p>
+<p><img src="https://d1b10bmlvqabco.cloudfront.net/attach/j6qqcqfmotn3ox/hzoodfz0pg067f/j79tq8yhmhl2/Screen_Shot_20170906_at_10.09.02_PM.png" alt="" /></p>
+<p></p>
+<p>Thanks,</p>
+<p></p>
+<p>Matt</p><p>After I installed Anaconda (I am sure it&#39;s the right version) and typed jupyter notebook in the terminal on my Mac, no browser window pop out. Instead, the following lines appeared.</p>
+<p></p>
+<p>louxiaohundeMacBook-Pro:~ louxiaohun$ jupyter notebook</p>
+<p>Traceback (most recent call last):</p>
+<p>  File &#34;/anaconda/bin/jupyter-notebook&#34;, line 6, in &lt;module&gt;</p>
+<p>    sys.exit(notebook.notebookapp.main())</p>
+<p>  File &#34;/anaconda/lib/python3.6/site-packages/jupyter_core/application.py&#34;, line 267, in launch_instance</p>
+<p>    return super(JupyterApp, cls).launch_instance(argv=argv, **kwargs)</p>
+<p>  File &#34;/anaconda/lib/python3.6/site-packages/traitlets/config/application.py&#34;, line 657, in launch_instance</p>
+<p>    app.initialize(argv)</p>
+<p>  File &#34;&lt;decorator-gen-7&gt;&#34;, line 2, in initialize</p>
+<p>  File &#34;/anaconda/lib/python3.6/site-packages/traitlets/config/application.py&#34;, line 87, in catch_config_error</p>
+<p>    return method(app, *args, **kwargs)</p>
+<p>  File &#34;/anaconda/lib/python3.6/site-packages/notebook/notebookapp.py&#34;, line 1290, in initialize</p>
+<p>    super(NotebookApp, self).initialize(argv)</p>
+<p>  File &#34;&lt;decorator-gen-6&gt;&#34;, line 2, in initialize</p>
+<p>  File &#34;/anaconda/lib/python3.6/site-packages/traitlets/config/application.py&#34;, line 87, in catch_config_error</p>
+<p>    return method(app, *args, **kwargs)</p>
+<p>  File &#34;/anaconda/lib/python3.6/site-packages/jupyter_core/application.py&#34;, line 243, in initialize</p>
+<p>    self.migrate_config()</p>
+<p>  File &#34;/anaconda/lib/python3.6/site-packages/jupyter_core/application.py&#34;, line 162, in migrate_config</p>
+<p>    from .migrate import get_ipython_dir, migrate</p>
+<p>  File &#34;/anaconda/lib/python3.6/site-packages/jupyter_core/migrate.py&#34;, line 35, in &lt;module&gt;</p>
+<p>    from IPython.paths import get_ipython_dir</p>
+<p>  File &#34;/anaconda/lib/python3.6/site-packages/IPython/__init__.py&#34;, line 49, in &lt;module&gt;</p>
+<p>    from .terminal.embed import embed</p>
+<p>  File &#34;/anaconda/lib/python3.6/site-packages/IPython/terminal/embed.py&#34;, line 19, in &lt;module&gt;</p>
+<p>    from IPython.terminal.ipapp import load_default_config</p>
+<p>  File &#34;/anaconda/lib/python3.6/site-packages/IPython/terminal/ipapp.py&#34;, line 30, in &lt;module&gt;</p>
+<p>    from IPython.core.magics import ScriptMagics</p>
+<p>  File &#34;/anaconda/lib/python3.6/site-packages/IPython/core/magics/__init__.py&#34;, line 21, in &lt;module&gt;</p>
+<p>    from .execution import ExecutionMagics</p>
+<p>  File &#34;/anaconda/lib/python3.6/site-packages/IPython/core/magics/execution.py&#34;, line 22, in &lt;module&gt;</p>
+<p>    import cProfile as profile</p>
+<p>  File &#34;/anaconda/lib/python3.6/cProfile.py&#34;, line 10, in &lt;module&gt;</p>
+<p>    import profile as _pyprofile</p>
+<p>  File &#34;/anaconda/lib/python3.6/profile.py&#34;, line 590</p>
+<p>    export PATH=&#34;$HOME/anaconda/bin:$PATH&#34;.</p>
+<p>              ^</p>
+<p>SyntaxError: invalid syntax</p>
+<p></p>
+<p>I tried the solution provided in the troubleshooting, but it didn&#39;t work.</p>
+<p>Hoping to get help. Thanks!</p><p>Enjoy this discussion on pie charts on Tufte&#39;s forum</p>
+<p></p>
+<p><a href="https://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=00018S">https://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=00018S<br /><br />I</a> particularly liked the label on Tufte&#39;s pie-pie chart:<br />&#34;Pie I have not yet eaten&#34; ;-)</p><p></p><p>This hasn&#39;t been assigned for analysis, BUT the Monty Hall problem in the style guide is really bugging me.</p>
+<p></p>
+<p>The probability of choosing a door behind which the car lies is 1/3 from the outset. The argument goes that when Monty shows another door has a goat behind it, the probability of winning if you switch is higher.</p>
+<p></p>
+<p>But wait, isn&#39;t the probability of the door you picked itself raised by the revelation of the goat behind the other door, with no further action on your part? The claim that the probability of the original choice being correct is pegged at 1/3 doesn&#39;t seem right. Just because the action of choosing the first door occurred when the information set was such that the odds were 1/3, the mere uncovering of the information itself made the odds of the original being correct 1/2, with the odds of winning by switching being 1/2.</p><p>For HW0 are we suppose to submit the .ipynb file and a pdf file to canvas?</p><p>Or should we be writing these ourselves?</p><p>I forked cs109/a-2017 into my own username/a-2017 repository, and I&#39;m trying to figure out which git command I should use to pull the lab solutions into my local repository. What should it be? I tried &#96;git pull origin master&#96;, but it&#39;s just pulling from my own repository and not downloading the solutions.</p><p>Hello,</p>
+<p></p>
+<p>I believe that there is an error in the code provided to us in one of the cells in this section.  Per direction, we generate our &#34;..._sample_means&#34; arrays using the &#34;sample sizes&#34; array as the seed, which has values [1, ... , 1000] in it.   Per the comment on this cell, we want the mean and std from the trials which used a sample size of 10, which matches sample_sizes[9].  Therefore, rather than outputting</p>
+<p></p>
+<p>trials[0], mean_of_sample_means[0], std_dev_of_sample_means[0]</p>
+<p></p>
+<p>we want to print</p>
+<p></p>
+<p>sample_sizes[9], mean_of_sample_means[9], std_dev_of_sample_means[9]</p>
+<p></p>
+<p>right?</p>
+<p></p>
+<p>Thanks!</p><p>Hello,</p>
+<p></p>
+<p>Lots of great OH times and some section times were mentioned at lecture, but I don&#39;t yet see more Calendar info in Canvas.  Might a newer version of the syllabus list these resources, and may we have it?  (I still see the one from July posted on Canvas.)  And/or, is there somewhere else we should look, especially to find out about all of the &#34;non-advanced&#34; section times and places, which were not specified at lecture?</p>
+<p></p>
+<p>Much obliged!  </p><p>I work (and live) in Portland Oregon, so the lectures typically air during my work week (10 am - 11:30 am if I were to watch them live.) This means for online courses I typically watch the recordings either the day they go up, or on the weekend (typically Saturday) depending on what else is going on.</p>
+<p></p>
+<p>Is it okay to turn in the quizzes after watching the recordings for online students, or do they need to be turned in live?</p><p>How do we upload entire folder on Anaconda-Jupyter? or do we just need to upload notebook(.ipynb)  we work on?</p><p></p><p dir="ltr">following up on lab 0 self-study</p>
+<p dir="ltr">does anyone know how to fix the tuple object?</p>
+<p dir="ltr">thanks!</p>
+<p dir="ltr"></p>
+<pre>with open(&#39;hamlet.txt&#39;) as f:<br />    read_data = f.read()<br />    import os<br /> <br />    oldName = &#39;hamlet.txt&#39;<br />    newName = &#39;hamlettext.txt&#39;<br />    os.rename (oldName, newName)<br />f.closed
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+&lt;ipython-input-224-4b1dd1152e66&gt; in &lt;module&gt;()
+      5     oldName = &#39;hamlet.txt&#39;
+      6     newName = &#39;hamlettext.txt&#39;
+----&gt; 7     os.rename (oldName, newName)
+      8 f.closed
+
+TypeError: &#39;tuple&#39; object is not callable
+</pre><p>Hi,</p>
+<p></p>
+<p>What date is the final project due at the end of the semester?</p><p>Where can I find a reading schedule for the textbook reading?</p><p>Hi, As it was mentioned in the lecture that Quizzes needs to be taken after the lecture but for online student who are watching the video lecture, how will they participate?</p>
+<p>Will those questions be available for online students too?</p>
+<p></p><p>There is no assignment for Lab 0 on Canvas, so I don&#39;t know how I can submit it. Also, when is it due by?</p><p>Was there a quiz after the first lecture?</p><p>Over the summer I had installed Anaconda, but then I uninstalled it after it started having some problems. I reinstalled Anaconda today (on windows 10). When I try to open the included jupyter notebook, a terminal comes up then fills with text and immediately closes. All other parts of anaconda will not even open. How do I fix this? Nothing I&#39;ve googled has been helpful to me. Thank you to anyone who can help me with this.</p>
+Piazza is a Q&A platform designed to get you great answers from classmates and instructors fast. We've put together this list of tips you might find handy as you get started:
+
+<ol style="margin:0;padding:0;list-style-position:inside;"> <li style="margin:0;padding:0"><strong>Ask questions!</strong>
+
+The best way to get answers is to ask questions! Ask questions on Piazza rather than emailing your teaching staff so everyone can benefit from the response (and so you can get answers from classmates who are up as late as you are).
+
+</li><li style="margin:0;padding:0"><strong>Edit questions and answers wiki-style.</strong>
+
+Think of Piazza as a Q&A wiki for your class. Every question has just a single <strong>students' answer</strong> that students can edit collectively (and a single <strong>instructors’ answer</strong> for instructors).
+
+</li><li style="margin:0;padding:0"> <strong>Add a followup to comment or ask further questions.</strong>
+
+To comment on or ask further questions about a post, start a <strong>followup discussion</strong>. Mark it resolved when the issue has been addressed, and add any relevant information back into the Q&A above.
+
+</li><li style="margin:0;padding:0"> <strong>Go anonymous.</strong>
+
+Shy? No problem. You can always opt to post or edit anonymously.
+
+</li><li style="margin:0;padding:0"> <strong>Tag your posts.</strong>
+
+It's far more convenient to find all posts about your Homework 3 or Midterm 1 when the posts are tagged. Type a “#” before a key word to tag. Click a blue tag in a post or the question feed to filter for all posts that share that tag.
+
+</li><li style="margin:0;padding:0"> <strong>Format code and equations.</strong>
+
+Adding a code snippet? Click the <strong>pre</strong> or <strong>tt</strong> button in the question editor to add pre-formatted or inline teletype text. 
+Mathematical equation? Click the <strong>Fx</strong> button to access the LaTeX editor to build a nicely formatted equation.
+
+</li><li style="margin:0;padding:0"> <strong>View and download class details and resources.</strong> </li></ol>
+
+Click the <strong>Course Page</strong> button in your top bar to access the class syllabus, staff contact information, office hours details, and course resources—all in one place!
+
+
+Contact the Piazza Team anytime with questions or comments at <strong>team@piazza.com</strong>. We love feedback!
